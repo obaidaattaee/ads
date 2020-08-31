@@ -17,10 +17,11 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('website.index');
 });
-Route::prefix('admin')->middleware('auth')->group(function (){
+Route::prefix('admin')->namespace('Admin')->middleware('auth')->group(function (){
     Route::get('home' , function(){
         return view('dashboard.layouts.app');
     });
+    Route::resource('products' , 'ProductController');
 });
 
 Auth::routes();

@@ -27,6 +27,16 @@
 {{--                @endif--}}
 {{--            </li>--}}
 {{--            @endforeach--}}
+            <li class="nav-item start ">
+                            <a href="#" class="nav-link nav-toggle">
+                                <i class="icon-map"></i>
+                                <span class="title">product</span>
+
+                                    <span class="arrow"></span>
+
+                            </a>
+
+                        </li>
         </ul>
     </div>
 </div>
