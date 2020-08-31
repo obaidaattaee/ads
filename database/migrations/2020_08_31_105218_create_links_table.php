@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateAboutTable extends Migration
+class CreateLinksTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,14 @@ class CreateAboutTable extends Migration
      */
     public function up()
     {
-        Schema::create('about', function (Blueprint $table) {
+        Schema::create('links', function (Blueprint $table) {
             $table->id();
-            $table->text('whyUs');
-            $table->string('image');
-            $table->boolean('published')->default(0);
-
+            $table->string('title');
+            $table->string('route');
+            $table->integer('parent_id')->default(0);
+            $table->integer('order_id')->default(0);
+            $table->boolean('show_in_menu')->default(1);
+            $table->string('icon')->nullable();
             $table->timestamps();
         });
     }
@@ -30,6 +32,6 @@ class CreateAboutTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('about');
+        Schema::dropIfExists('links');
     }
 }

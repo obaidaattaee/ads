@@ -29,17 +29,6 @@ class CategoryController extends Controller
             "published"=>$published
             ]);
             
-        if($request->export){
-            return $categories->where('published','=','1')/*->select("id","title")*/->get()->downloadExcel(
-                //"categories.csv",
-                //$writerType = \Maatwebsite\Excel\Excel::CSV,
-                ///or
-                "categories.xlsx",
-                $writerType = null,
-                $headings = true
-            );
-        }
-        
         $categories = $categories->where('published','=','1')->paginate(5)->appends(["q"=>$q,"published"=>$published]);
 
         return view('admin.category.index')->withCategories($categories);

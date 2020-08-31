@@ -17,14 +17,22 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('website.index');
 });
-Route::prefix('admin')->namespace('Admin')->middleware('auth')->group(function (){
-    Route::get('home' , function(){
-        return view('dashboard.layouts.app');
-    });
-    Route::resource('products' , 'ProductController');
-//    Route::post('products/{product}/update' , 'ProductController@update')->name('product.update');
-});
 
+
+Route::prefix('admin')->namespace("Admin")->group(function () {
+    Route::get('home' , function(){return view('dashboard.layouts.app');});
+    Route::resource("categories",'CategoryController');
+    Route::resource("comments",'CommentController');
+    Route::resource("about",'AboutController');
+    Route::resource("post",'PostController');
+    Route::resource('products' , 'ProductController');
+
+
+
+Route::post(" settings",'SettingController@postsetting')->name('post-settings');
+
+
+});
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
