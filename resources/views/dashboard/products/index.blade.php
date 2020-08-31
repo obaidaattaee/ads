@@ -1,19 +1,19 @@
 @extends("dashboard.layouts.app")
 @section("title", "Manage Products")
 @section("content")
-
+    {{--{{dd($products)}}--}}
     <form class='row'>
         <div class='col-sm-2'>
             <input type='text' class="form-control" placeholder="enter product name" name="name"/></div>
 
         <div class='col-sm-2'>
-        <select name="category" class="form-control">
-                        <option value="">Any Category</option>
-                        @foreach($categories as $category)
-                            <option
-                                {{request()->get('category')== $category->id?"selected":""}} value='{{$category->id}}'>{{$category->title}}</option>
-                        @endforeach
-                    </select>
+            <select name="category" class="form-control">
+                <option value="">Any Category</option>
+                @foreach($categories as $category)
+                    <option
+                        {{request()->get('category')== $category->id?"selected":""}} value='{{$category->id}}'>{{$category->title}}</option>
+                @endforeach
+            </select>
         </div>
 
         <div class='col-sm-2'>
@@ -30,9 +30,9 @@
             <a href="{{ route('products.create') }}" class="btn btn-success">Create New Product</a>
         </div>
     </form>
-
+<br/>
     @if($products->count()>0)
-        <table align="center" class="table mt-3 table-striped table-bordered">
+        <table align="center" class="table mt-6 table-striped table-bordered">
             <thead>
             <tr>
                 <th>title</th>
@@ -42,7 +42,7 @@
                 <th>reviews</th>
                 <th> address</th>
                 <th>published</th>
-
+                <th>Edit / Delete</th>
 
             </tr>
             </thead>
@@ -53,13 +53,17 @@
                     <td><a href="{{ route('products.show' , $product->id) }}">{{ $product->title }}</a></td>
                     <td>{{ $product->category->title?? "other category" }}</td>
                     <td>
-                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Popup image</button>
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Popup
+                            image
+                        </button>
 
-                        <div id="myModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                        <div id="myModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+                             aria-hidden="true">
                             <div class="modal-dialog">
                                 <div class="modal-content">
                                     <div class="modal-body">
-                                        <img src="{{asset("storage/".$product->image)}}" class="img-responsive" alt="No Image Found" width="100">
+                                        <img src="{{asset("storage/".$product->image)}}" class="img-responsive"
+                                             alt="No Image Found" width="100">
                                     </div>
                                 </div>
                             </div>
@@ -68,15 +72,9 @@
                     <td>{{ $product->description }}</td>
                     <td>{{ $product->reviews }}</td>
                     <td>{{ $product->address }}</td>
-
-
-
                     <td>
-                        <input type="checkbox" disabled {{ $product->active?"checked" : "" }}>
+                        <input type="checkbox" disabled {{ $product->published == 1 ?"checked" : "" }}>
                     </td>
-
-
-
                     <td width="20%">
                         <form method="post" action="{{ route('products.destroy', $product->id) }}">
 

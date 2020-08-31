@@ -7,11 +7,11 @@
 
     <div class="portlet light ">
         <div class="portlet-body form">
-            <form method="" enctype="multipart/form-data" action="{{ route('products.update ',$product->id) }}"
+            <form method="post" enctype="multipart/form-data" action="{{url('/admin/products/'.$product->id)}}"
                   role="form">
                 @csrf
-                @method("PATCH")
-                @csrf
+                @method("PUT")
+
                 <div class="form-body">
                     <div class="form-group has-success"><label for="form_control_1">Title</label>
                         <input type="text" class="form-control" id="form_control_1" name="title"
@@ -55,7 +55,7 @@
                     <input type="text" class="form-control"  id="address" value="{{old('address')??$product->address}}" name="address" >
                 </div>
                 <div class="form-check">
-                    <input type="checkbox" name='published' value="{{old('published')?? ""}}" class="form-check-input" id="published" {{old('published')? "checked" : $product->publised ? "checked":""}}>
+                    <input type="checkbox" name='published' value="1" class="form-check-input" id="published" {{$product->published ==1 ?"checked" : ""}}>
                     <label class="form-check-label" for='active'>published</label>
                 </div>
                 <div class="card-footer mt-3">

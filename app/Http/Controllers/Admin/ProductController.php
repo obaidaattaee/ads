@@ -63,6 +63,7 @@ class ProductController extends Controller
 
     public function store(CreateRequest $request)
     {
+//        dd($request->all());
         $request['published'] = $request['published'] ? 1 : 0;
         $imageName = basename($request->imageFile->store("public"));
         $request['image'] = $imageName;
@@ -72,6 +73,7 @@ class ProductController extends Controller
     }
     public function show($id)
     {
+
         $products = Product::find($id);
         $categories = Category::get();
         if ($products == null) {
@@ -99,6 +101,7 @@ class ProductController extends Controller
 
     public function update(EditRequest $request,  $id)
     {
+//        dd("hellp");
         if (!$request->active) {
             $request['active'] = 0;
         }

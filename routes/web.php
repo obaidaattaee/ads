@@ -22,8 +22,10 @@ Route::prefix('admin')->namespace('Admin')->middleware('auth')->group(function (
         return view('dashboard.layouts.app');
     });
     Route::resource('products' , 'ProductController');
+//    Route::post('products/{product}/update' , 'ProductController@update')->name('product.update');
 });
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::post('postnewslatteremail' , 'Admin\NewsletterController@create')->name('post.email');

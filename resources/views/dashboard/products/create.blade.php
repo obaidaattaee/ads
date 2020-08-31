@@ -53,8 +53,8 @@
                     <input type="text" class="form-control"  id="address" value="{{old('address')}}" name="address" >
                 </div>
                 <div class="form-check">
-                    <input type="checkbox" name='published' value="{{old('published')?? ""}}" class="form-check-input" id="published">
-                    <label class="form-check-label" for='active'>published</label>
+                    <input type="checkbox" name='published' value="1" class="form-check-input" id="published">
+                    <label class="form-check-label" for='published'>published</label>
                 </div>
                 <div class="card-footer mt-3">
                     <button type="submit" class="btn btn-primary">Submit</button>
