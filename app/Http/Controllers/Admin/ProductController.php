@@ -70,18 +70,18 @@ class ProductController extends Controller
         session()->flash('msg', "s: product create successfully");
         return redirect(route('products.index'));
     }
-//    public function show($id)
-//    {
-//        $products = Product::find($id);
-//        $categories = Category::get();
-//        if ($products == null) {
-//            session()->flash('msg', 'w: this product not exist');
-//            return redirect(route('products.index'));
-//        } else {
-//
-//            return view('dashboard.products.show')->with("products", $products)->with("categories", $categories);
-//        }
-//    }
+    public function show($id)
+    {
+        $products = Product::find($id);
+        $categories = Category::get();
+        if ($products == null) {
+            session()->flash('msg', 'w: this product not exist');
+            return redirect(route('products.index'));
+        } else {
+
+            return view('dashboard.products.show')->with("products", $products)->with("categories", $categories);
+        }
+    }
 
     public function edit($id)
     {
