@@ -28,7 +28,7 @@
 {{--            </li>--}}
 {{--            @endforeach--}}
             <li class="nav-item start ">
-                            <a href="#" class="nav-link nav-toggle">
+                            <a href="{{route('products.index')}}" class="nav-link nav-toggle">
                                 <i class="icon-map"></i>
                                 <span class="title">product</span>
 

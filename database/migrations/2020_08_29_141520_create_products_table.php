@@ -18,7 +18,7 @@ class CreateProductsTable extends Migration
             $table->string('title');
             $table->string('image');
             $table->text('description');
-            $table->integer('reviews');
+            $table->integer('reviews')->default(0);
             $table->string('address');
             $table->integer('category_id');
             $table->boolean('published')->default(0);
