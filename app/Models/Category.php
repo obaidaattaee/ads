@@ -8,10 +8,11 @@ class Category extends Model
 {
     protected $fillable = [
         'title',
-        'published',
+        'icon',
+        'published'
     ];
-    public function products(){
-        return $this->hasMany("App\Models\Product");
-    }
+ public function products(){
+     return $this->hasMany("App\Models\Product");
+ }
 
 }
