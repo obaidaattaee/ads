@@ -35,8 +35,8 @@ class AboutController extends Controller
             "q"=>$q,
             "published"=>$published,
             ]);
-    
-            return view('admin.about.index')->withAbouts($abouts);
+
+            return view('dashboard.about.index')->withAbouts($abouts);
 
     }
 
@@ -47,7 +47,7 @@ class AboutController extends Controller
      */
     public function create()
     {
-        return view("admin.about.create");
+        return view("dashboard.about.create");
 
     }
 
@@ -57,7 +57,7 @@ class AboutController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store($request)
+    public function store(Request $request)
     {
         if(!$request->published){
             $request['published']=0;
@@ -75,7 +75,7 @@ class AboutController extends Controller
      */
     public function show($id)
     {
-        
+        return  redirect(route('abut.index'));
     }
 
     /**
@@ -86,13 +86,13 @@ class AboutController extends Controller
      */
     public function edit($id)
     {
-        
+
         $abouts = About::find($id);
         if($abouts==null){
            session()->flash("msg", "The abouts was not found");
            return redirect(route("about.index"));
         }
-        return view("admin.about.edit")->withAbouts($abouts);
+        return view("dashboard.about.edit")->withAbouts($abouts);
     }
 
     /**
@@ -102,14 +102,10 @@ class AboutController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update($request, $id)
+    public function update(Request $request, $id)
     {
         if(!$request->published){
             $request['published']=0;
-        }
-        if($request->imageFile){
-            $image = basename($request->imageFile->store("public"));
-            $request['image'] = $image;
         }
         About::find($id)->update($request->all());
         session()->flash("msg", "The About was updated");
@@ -124,13 +120,13 @@ class AboutController extends Controller
      */
     public function destroy($id)
     {
-        $abouts = Blog::find($id);
+        $abouts = About::find($id);
         if(!$abouts){
-            Session()->flash('msg','blogs not found');
-            return redirect(route('abouts.index'));
+            Session()->flash('msg','w: this item not found');
+            return redirect(route('about.index'));
         }
         About::destroy($id);
-        session()->flash("msg", " abouts Deleted Successfully");
-        return redirect(route("abouts.index"));
+        session()->flash("msg", "s: abouts Deleted Successfully");
+        return redirect(route("about.index"));
     }
 }

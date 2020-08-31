@@ -1,4 +1,4 @@
-@extends("layouts.admin")
+@extends("dashboard.layouts.app")
 
 @section("title", "Create About")
 
@@ -10,23 +10,23 @@
 <div class="portlet light ">
         <div class="portlet-body form">
 <form method="post" enctype="multipart/form-data" action="{{ route('about.store') }}" role="form">
-    @csrf      
+    @csrf
 
      <div class="form-body">
             <div class="form-group has-success">
-               <label for="whyUs">description</label>        
-             <textarea class="form-control" id="whyUs" name="whyUs">{{ old('whyUs') }}</textarea>       
-            </div> 
-    </div> 
-     <div class="form-group row">
-         <div class='col-sm-6'>
-                <label for="image">Image</label>
-                <div class="custom-file">
-                <input type="file" name="image" class="custom-file-input" id="image">
+               <label for="whyUs">description</label>
+             <textarea class="form-control" id="whyUs" name="whyUs">{{ old('whyUs') }}</textarea>
             </div>
-        </div>
     </div>
-    
+{{--     <div class="form-group row">--}}
+{{--         <div class='col-sm-6'>--}}
+{{--                <label for="image">Image</label>--}}
+{{--                <div class="custom-file">--}}
+{{--                <input type="file" name="image" class="custom-file-input" id="image">--}}
+{{--            </div>--}}
+{{--        </div>--}}
+{{--    </div>--}}
+
 
     <div class="form-check">
         <input {{ old('published')?"checked":"" }} value='1' type="checkbox" name='published' class="form-check-input" id="published">

@@ -1,4 +1,4 @@
-@extends("layouts.admin")
+@extends("dashboard.layouts.app")
 @section("title", "Manage Menu")
 
 
@@ -7,19 +7,19 @@
     <table class="table mt-3 table-striped table-bordered" align="center">
         <thead>
         <tr>
-            
-            <th>dicription</th>
-            <th>image</th>
+
+            <th>why us </th>
+
             <th>active</th>
             <th>edit|delete</th>
         </tr>
         </thead>
-      
+
       <tbody>
             @foreach($abouts as $about)
                 <tr>
-                    <td>{{ $about->dicription }}</td>
-                    <td><img width='100' src='{{ asset('storage/'.$about->image) }}' /></td>
+                    <td>{!!  $about->whyUs  !!} </td>
+{{--                    <td><img width='100' src='{{ asset('storage/'.$about->image) }}' /></td>--}}
                     <td> <input {{$about->published?"checked":""}} disabled type="checkbox"> </td>
                     <td width="20%">
                         <form method="post" action="{{ route('about.destroy', $about->id) }}">

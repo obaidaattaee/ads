@@ -19,7 +19,7 @@ Route::get('/', function () {
 });
 
 
-Route::prefix('admin')->namespace("Admin")->group(function () {
+Route::prefix('admin')->namespace("Admin")->middleware('auth')->group(function () {
     Route::get('home' , function(){return view('dashboard.layouts.app');});
     Route::resource("categories",'CategoryController');
     Route::resource("comments",'CommentController');
