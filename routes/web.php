@@ -25,6 +25,7 @@ Route::prefix('admin')->namespace("Admin")->middleware('auth')->group(function (
     Route::resource("comments",'CommentController');
     Route::resource("about",'AboutController');
     Route::resource("post",'PostController');
+    Route::get("post/delete/{id}",'PostController@destroy')->name('post.delete');
     Route::resource('products' , 'ProductController');
 
 

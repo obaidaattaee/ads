@@ -1,4 +1,4 @@
-@extends("layouts.admin")
+@extends("dashboard.layouts.app")
 
 @section("title","Show  Post")
 
@@ -32,7 +32,7 @@
             </div>
             <div>
                 <button type="submit" class="btn btn-primary">Submit</button>
-                <a class='btn btn-danger' href='{{route('posts.index')}}'>Cancel</a>
+                <a class='btn btn-danger' href='{{route('post.index')}}'>Cancel</a>
             </div>
         </div>
     </form>

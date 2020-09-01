@@ -1,4 +1,4 @@
-@extends("layouts.admin")
+@extends("dashboard.layouts.app")
 @section("title", "Manage Posts")
 
 
@@ -20,13 +20,13 @@
 
     <div class="col-sm-4">
         <button class='btn btn-primary'><i class='fa fa-search'></i> Search</button>
-        <a href="{{ route("posts.create") }}" class='btn btn-success'><i class='fa fa-plus'></i>Create Room</a>
+        <a href="{{ route("post.create") }}" class='btn btn-success'><i class='fa fa-plus'></i>Create post</a>
     </div>
 </form>
 
 <div class="table-scrollable">
 
-@if($rooms->count()>0)
+@if($posts->count()>0)
 
     <table align="center" class="table table-striped mt-3 table-bordered table-hover">
         <thead>
@@ -43,7 +43,7 @@
 
             @foreach($posts as $post)
         <tr>
-            <td>{{ $room->user_id}}</td>
+            <td>{{ $post->user_id}}</td>
 
             <td><a href="{{ route("post.show", $post->id) }}">{{ $post->name }}</a></td>
 
@@ -57,8 +57,8 @@
             <td width="20%">
                 <form method="post" action="{{ route('post.destroy', $post->id) }}">
 
-                    <a href="{{ route("rooms.edit", $post->id) }}" class="btn btn-primary btn-sm"><i class='fa fa-edit'></i></a>
-                    <a href="{{ route("delete-rooms", $post->id) }}" onclick='return confirm("Are you sure delete?")' class="btn btn-warning btn-sm"><i class='fa fa-trash'></i></a>
+{{--                    <a href="{{route('post.edit' , $post->id)}}" class="btn btn-primary btn-sm"><i class='fa fa-edit'></i></a>--}}
+                    <a href="{{ route('post.delete' , $post->id) }}" onclick='return confirm("Are you sure delete?")' class="btn btn-warning btn-sm"><i class='fa fa-trash'></i></a>
 
                     @csrf
                     @method("DELETE")
@@ -69,7 +69,7 @@
             @endforeach
         </tbody>
     </table>
-{{ $rooms->links() }}
+{{ $posts->links() }}
 
 @else
 

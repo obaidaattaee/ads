@@ -1,4 +1,4 @@
-@extends("layouts.admin")
+@extends("dashboard.layouts.app")
 
 @section("title","Create New Comment")
 
@@ -6,19 +6,16 @@
 @section("content")
 
 
-    <form method="post" action="{{ route('posts.store') }}" role="form">
+    <form method="post" enctype="multipart/form-data" action="{{ route('post.store') }}" role="form">
         @csrf
         <div class="card-body">
             <div class="form-group">
-                <label for="name">name</label>
-                <input  type="text"  class="form-control" id="name" name="name" placeholder="Enter comment Name">
+                <label for="title">name</label>
+                <input  type="text"  class="form-control" id="name" name="title" placeholder="Enter comment Name">
             </div>
+
             <div class="form-group">
-                <label for="email">userID</label>
-                <input  type="email"  class="form-control" id="userID" name="userID" placeholder="Enter userID">
-            </div>
-            <div class="form-group">
-                <label for="website">description</label>
+                <label for="description">description</label>
                 <input  type="text"  class="form-control" id="description" name="description" placeholder="Enter description">
             </div>
             <div class="form-group">
@@ -33,7 +30,7 @@
             </div>
             <div>
                 <button type="submit" class="btn btn-primary">Submit</button>
-                <a class='btn btn-danger' href='{{route('posts.index')}}'>Cancel</a>
+                <a class='btn btn-danger' href='{{route('post.index')}}'>Cancel</a>
             </div>
         </div>
     </form>

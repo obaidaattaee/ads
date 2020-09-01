@@ -12,7 +12,7 @@ class PostController extends Controller
 
         $posts = Post::orderBy('id');
         $q=request()->get("q")??"";
-        $published=request()->get("published"); 
+        $published=request()->get("published");
 
 
         if($q){
@@ -22,39 +22,42 @@ class PostController extends Controller
 
             $posts->where('published' , $published);
         }
-    
-        $posts = $Post->where('published','=','1')->paginate(5)->appends(["q"=>$q,"published"=>$published]);
 
-        return view('admin.post.index')->withPosts($posts);
+        $posts = $posts->paginate(5)->appends(["q"=>$q,"published"=>$published]);
+
+        return view('dashboard.post.index')->withPosts($posts);
     }
 
     public function create()
     {
-        return view('admin.post.create');
+        return view('dashboard.post.create');
     }
 
-    public function store(){
-
-        $request['published'] = $request->get('published')?1:0 ;
+    public function store(Request $request){
+        $request['user_id'] = auth()->id();
+//        dd($request->all());
+        $request['published'] = $request['published'] ? 1 : 0;
+        $imageName = basename($request->imageFile->store('public'));
+        $request['image'] = $imageName;
         Post::create($request->all());
         session()->flash('msg' , 's: comment created successfully');
-        return redirect(route('posts.index'));
+        return redirect(route('post.index'));
     }
 
     public function show(Post $post)
     {
         $posts = Comment::find($post->id);
-        return view('admin.post.show')->with('posts' , $posts);
+        return view('dashboard.post.show')->with('posts' , $posts);
     }
     public function edit($id)
     {
 
-        $posts = Post::find($id);
-        if (!$posts){
+        $post = Post::find($id);
+        if (!$post){
             session()->flash('msg' , 'w: post not found');
             return redirect(route('posts.index'));
         }
-        return view('admin.post.edit')->with('posts' , $posts);
+        return view('dashboard.post.edit')->with('post' , $post);
     }
 
     public function destroy($id)
@@ -62,11 +65,11 @@ class PostController extends Controller
         $posts = Post::find($id);
         if(!$posts){
             Session()->flash('msg','post not found');
-            return redirect(route('posts.index'));
+            return redirect(route('post.index'));
         }
         Post::destroy($id);
         session()->flash("msg", "s:  posts Deleted Successfully");
-        return redirect(route("posts.index"));
+        return redirect(route("post.index"));
     }
 }
 

@@ -1,4 +1,4 @@
-@extends("layouts.admin")
+@extends("dashboard.layouts.app")
 
 @section("title","Edit New Post")
 
@@ -6,7 +6,7 @@
 @section("content")
 
 
-    <form method="post" action="{{ route('posts.update' , $posts->id) }}" role="form">
+    <form method="post" action="{{ route('post.update' , $post->id) }}" role="form">
         @csrf
         <div class="card-body">
             <div class="form-group">
@@ -33,7 +33,7 @@
             </div>
             <div>
                 <button type="submit" class="btn btn-primary">Submit</button>
-                <a class='btn btn-danger' href='{{route('posts.index')}}'>Cancel</a>
+                <a class='btn btn-danger' href='{{route('post.index')}}'>Cancel</a>
             </div>
         </div>
     </form>
