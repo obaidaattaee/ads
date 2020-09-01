@@ -11,4 +11,8 @@ class Category extends Model
         'icon',
         'published'
     ];
+ public function products(){
+     return $this->hasMany("App\Models\Product");
+ }
+
 }

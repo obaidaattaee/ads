@@ -6,10 +6,11 @@
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
           </div>
           <div class="col-md-6">
-            
-            <form class="d-flex">
-              <input type="text" class="form-control" placeholder="Email">
-              <input type="submit" value="Subscribe" class="btn btn-white"> 
+@include('shared.msg')
+            <form class="d-flex" method="post" action="{{route('post.email')}}">
+                @csrf
+              <input type="email" class="form-control" name="email" placeholder="Email">
+              <input type="submit" value="Subscribe" class="btn btn-white">
             </form>
           </div>
         </div>
