@@ -1,4 +1,4 @@
-@extends("layouts.admin")
+@extends("dashboard.layouts.app")
 @section('title' , 'Settings')
 @section("content")
 

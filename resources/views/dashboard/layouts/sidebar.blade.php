@@ -40,7 +40,7 @@
             </li>
             <li class="nav-item start ">
                 <a href="{{route('about.index')}}" class="nav-link nav-toggle">
-                    <i class="icon-support"></i>
+                    <i class="fa fa-briefcase"></i>
                     <span class="title">about</span>
                     <span class="arrow"></span>
                 </a>
@@ -56,7 +56,7 @@
             </li>
             <li class="nav-item start ">
                 <a href="{{route('comments.index')}}" class="nav-link nav-toggle">
-                    <i class="icon-ban"></i>
+                    <i class="fa fa-comment"></i>
                     <span class="title">comments</span>
                     <span class="arrow"></span>
                 </a>
@@ -64,12 +64,18 @@
             </li>
             <li class="nav-item start ">
                 <a href="{{route('post.index')}}" class="nav-link nav-toggle">
-                    <i class="icon-ban"></i>
+                    <i class="fa fa-laptop"></i>
                     <span class="title">posts</span>
                     <span class="arrow"></span>
-                </a>
-
-            </li>
+               </a>
+            </i>
+            <li class="nav-item start ">
+                <a href="{{route('settings')}}" class="nav-link nav-toggle">
+                    <i class="fa fa-cogs"></i>
+                    <span class="title">settings</span>
+                    <span class="arrow"></span>
+               </a>
+            </i>
         </ul>
     </div>
 </div>

@@ -18,7 +18,7 @@ class SettingController extends Controller
     public function setting()
     {
         $settings = Setting::first();
-        return view('admin.settings.settings')->with('settings', $settings);
+        return view('dashboard.settings.settings')->with('settings', $settings);
     }
 
     /**
