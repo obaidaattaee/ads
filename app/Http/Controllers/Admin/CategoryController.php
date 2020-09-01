@@ -12,7 +12,7 @@ class CategoryController extends Controller
 {
     public function index(Request $request)
     {
-        $categories = Category::where('published','=','1')->orderBy('id','desc');
+        $categories = Category::orderBy('id','desc');
         $q=request()->get("q")??"";
         $published=request()->get("published");
 
@@ -22,16 +22,15 @@ class CategoryController extends Controller
         if($published!=null){
             $categories->where('published',$published);
         }
-        
+
 
         $categories = $categories->paginate(5)->appends([
             "q"=>$q,
             "published"=>$published
             ]);
-            
-        $categories = $categories->where('published','=','1')->paginate(5)->appends(["q"=>$q,"published"=>$published]);
 
-        return view('admin.category.index')->withCategories($categories);
+
+        return view('dashboard.category.index')->withCategories($categories);
     }
     /**
      * Show the form for creating a new resource.
@@ -40,7 +39,7 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        return view('admin.category.create');
+        return view('dashboard.category.create');
     }
 
     /**
@@ -49,7 +48,7 @@ class CategoryController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(CategoryRequest $request)
+    public function store(Request $request)
     {
         if(!$request->published){
             $request['published']=0;
@@ -72,21 +71,7 @@ class CategoryController extends Controller
            session()->flash("msg", "The category was not found");
            return redirect(route("category.index"));
         }
-        return view("admin.category.show")->withCategory($category);
-    }
-
-    public function active($id){
-        $category_active=Category::find($id);
-        $category_active->update(['published'=>1]);
-        session()->flash('msg','s: Category has been confirmed');
-        return redirect()->back();
-
-    }
-    public function pending($id){
-        $category_pending=Category::find($id);
-        $category_pending->update(['published'=>0]);
-        session()->flash('msg','w: Category has been Pending');
-        return redirect()->back();
+        return view("dashboard.category.show")->withCategory($category);
     }
 
     /**
@@ -102,7 +87,7 @@ class CategoryController extends Controller
            session()->flash("msg", "The category was not found");
            return redirect(route("category.index"));
         }
-        return view("admin.category.edit")->withCategory($category);
+        return view("dashboard.category.edit")->withCategory($category);
     }
 
     /**
@@ -112,7 +97,7 @@ class CategoryController extends Controller
      * @param  \App\Models\Category  $category
      * @return \Illuminate\Http\Response
      */
-    public function update(CategoryRequest $request, $id)
+    public function update(Request $request, $id)
     {
         if(!$request->published){
             $request['published']=0;

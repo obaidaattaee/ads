@@ -45,6 +45,13 @@
                     <span class="arrow"></span>
                 </a>
 
+            </li>  <li class="nav-item start ">
+                <a href="{{route('categories.index')}}" class="nav-link nav-toggle">
+                    <i class="icon-support"></i>
+                    <span class="title">category</span>
+                    <span class="arrow"></span>
+                </a>
+
             </li>
         </ul>
     </div>
