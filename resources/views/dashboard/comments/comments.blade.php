@@ -1,22 +1,14 @@
-@extends("layouts.admin")
+@extends('dashboard.layouts.app')
 @section("title", "Comments")
 @section("content")
 
     <form class='row'>
-        <div class='col-md-2'>
+        <div class='col-md-4'>
             <input type='text' value="" id="name" class="form-control" placeholder="name to search" name="name"/></div>
-        <div class='col-md-2'>
+        <div class='col-md-4'>
             <input type='text' value="" id="blog" class="form-control" placeholder="blog name to search " name="blog"/></div>
-        <div class='col-md-2'>
-            <input type='text' value="" id="website" class="form-control" placeholder="website to search " name="website"/></div>
-        <div class='col-md-2'>
-            <select name='published' class='form-control'>
-                <option value=''>Any status</option>
-                <option value='1'>Active</option>
-                <option value='0'>InActive</option>
-            </select>
-        </div>
-        <div class='col-md-2'>
+
+        <div class='col-md-2 '>
             <button type='submit' class='btn btn-primary'><i class="fa fa-search"></i>search</button>
         </div>
     </form>

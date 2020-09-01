@@ -52,6 +52,13 @@
                     <span class="arrow"></span>
                 </a>
 
+            </li></li>  <li class="nav-item start ">
+                <a href="{{route('comments.index')}}" class="nav-link nav-toggle">
+                    <i class="icon-ban"></i>
+                    <span class="title">comments</span>
+                    <span class="arrow"></span>
+                </a>
+
             </li>
         </ul>
     </div>

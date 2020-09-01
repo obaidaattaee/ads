@@ -32,9 +32,9 @@ class CommentController extends Controller
 
             $comments->where('description' , $description);
         }
-        $comments =$comments->paginate(10)->appends(['published' => $published , 'user_id' =>$user_id ,'post_id'=>$post_id ,'description'=>$description]);
+        $comments =$comments->paginate(10)->appends(['published' => $published ]);
 
-        return view('admin.comments.comments')->with('comments' , $comments);
+        return view('dashboard.comments.comments')->with('comments' , $comments);
     }
 
     /**
@@ -42,10 +42,6 @@ class CommentController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
-    {
-        return view('admin.comments.create');
-    }
 
     /**
      * Store a newly created resource in storage.
@@ -63,13 +59,6 @@ class CommentController extends Controller
         return redirect(route('comments.index'));
     }
 
-    public function status($id){
-        $comment_active=Comment::find($id);
-        $comment_active->update(['published'=>!$comment_active->published]);
-        session()->flash('msg','s: Comment has been confirmed');
-        return redirect()->back();
-
-    }
 
     /**
      * Display the specified resource.
@@ -90,16 +79,7 @@ class CommentController extends Controller
      * @param  \App\Models\Comment  $comment
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
-    {
 
-        $comments = Comment::find($id);
-        if (!$comments){
-            session()->flash('msg' , 'w: comment no found');
-            return redirect(route('comments.index'));
-        }
-        return view('admin.comments.edit')->with('comments' , $comments);
-    }
 
     /**
      * Update the specified resource in storage.
@@ -108,13 +88,7 @@ class CommentController extends Controller
      * @param  \App\Models\Comment  $comment
      * @return \Illuminate\Http\Response
      */
-    public function update(CommentsRequest $request, $id)
-    {
-        $request['published'] = $request->get('published')?1:0 ;
-        Comment::find($id)->update($request->all());
-        session()->flash('msg' , 's: comment updated successfully');
-        return redirect(route('comments.index'));
-    }
+
 
     /**
      * Remove the specified resource from storage.

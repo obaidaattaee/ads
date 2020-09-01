@@ -34,7 +34,7 @@
     @if($products->count()>0)
         <table align="center" class="table mt-6 table-striped table-bordered">
             <thead>
-            <tr>
+            <tr class="success">
                 <th>title</th>
                 <th>category</th>
                 <th> image</th>

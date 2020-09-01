@@ -6,7 +6,7 @@
     <a href="{{route('about.create')}}" class="btn btn-success pull-right">Create New menu item</a>
     <table class="table mt-3 table-striped table-bordered" align="center">
         <thead>
-        <tr>
+        <tr class="success">
 
             <th>why us </th>
 
