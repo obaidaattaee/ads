@@ -18,14 +18,14 @@
              <textarea class="form-control" id="whyUs" name="whyUs">{{ $abouts->whyUs }}</textarea>
             </div>
     </div>
-     <div class="form-group row">
+     {{-- <div class="form-group row">
          <div class='col-sm-6'>
                 <label for="image">Image</label>
                 <div class="custom-file">
                 <input type="file" name="image" value="{{ $abouts->image }}" class="custom-file-input" id="image">
             </div>
         </div>
-    </div>
+    </div> --}}
 
 
     <div class="form-check">

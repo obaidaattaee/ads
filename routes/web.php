@@ -13,6 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Auth::routes();
 
 Route::get('/', function () {
     return view('website.index');
@@ -29,12 +30,14 @@ Route::prefix('admin')->namespace("Admin")->middleware('auth')->group(function (
     Route::resource('products' , 'ProductController');
 
 
-
-Route::post(" settings",'SettingController@postsetting')->name('post-settings');
+Route::get("settings",'SettingController@setting')->name('settings');
+Route::post("settings",'SettingController@store')->name('post-settings');
 
 
 });
-Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::post('postnewslatteremail' , 'Admin\NewsletterController@create')->name('post.email');
+
+
+Route::get('/home', 'HomeController@index')->name('home');
