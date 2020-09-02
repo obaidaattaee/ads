@@ -18,6 +18,9 @@ Auth::routes();
 Route::get('/', function () {
     return view('website.index');
 });
+Route::get('ads', function () {
+    return view('website.ads');
+});
 
 
 Route::prefix('admin')->namespace("Admin")->middleware('auth')->group(function () {
