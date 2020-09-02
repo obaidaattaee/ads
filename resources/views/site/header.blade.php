@@ -1,25 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <title>ClassyAds &mdash; Colorlib Website Template</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic:400,700,800" rel="stylesheet">
-    <link rel="stylesheet" href="{{asset('classyads/fonts/icomoon/style.css')}}">
-
-    <link rel="stylesheet" href="{{asset('classyads/css/bootstrap.min.css')}}">
-    <link rel="stylesheet" href="{{asset('classyads/css/magnific-popup.css')}}">
-    <link rel="stylesheet" href="{{asset('classyads/css/jquery-ui.css')}}">
-    <link rel="stylesheet" href="{{asset('classyads/css/owl.carousel.min.css')}}">
-    <link rel="stylesheet" href="{{asset('classyads/css/owl.theme.default.min.css')}}">
-    <link rel="stylesheet" href="{{asset('classyads/css/bootstrap-datepicker.css')}}">
-    <link rel="stylesheet" href="{{asset('classyads/fonts/flaticon/font/flaticon.css')}}">
-    <link rel="stylesheet" href="{{asset('classyads/css/aos.css')}}">
-    <link rel="stylesheet" href="{{asset('classyads/css/rangeslider.css')}}">
-    <link rel="stylesheet" href="{{asset('classyads/css/style.css')}}">
-    
-  </head>
   <body>
   
   <div class="site-wrap">
