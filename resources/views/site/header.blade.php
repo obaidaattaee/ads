@@ -24,8 +24,8 @@
             <nav class="site-navigation position-relative text-right" role="navigation">
 
               <ul class="site-menu js-clone-nav mr-auto d-none d-lg-block">
-                <li class="active"><a href="index.html">Home</a></li>
-                <li><a href="listings.html">Ads</a></li>
+                <li class="active"><a href="{{ route('home-view') }}">Home</a></li>
+                <li><a href="{{ route('listings') }}">Ads</a></li>
                 <li class="has-children">
                   <a href="{{ route('about') }}">About</a>
                   <ul class="dropdown">

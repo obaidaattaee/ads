@@ -9,7 +9,16 @@ use App\Http\Requests\Contact\CreateRequest;
 
 class HomeController extends Controller
 {
+    public function index(){
+        
+        return view('frontend.home.index');
 
+    }
+    public function adSingle(){
+
+        return view('frontend.ads.ads-single');
+
+    }
     public function about(){
 
         return view("frontend.home.about");

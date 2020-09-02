@@ -688,10 +688,7 @@
 
  @yield("content")
 
-
- @include('site.subscribe')
- @include('site.footer')
-
+ 
   <script src="{{asset('classyads/js/jquery-3.3.1.min.js')}}"></script>
   <script src="{{asset('classyads/js/jquery-migrate-3.0.1.min.js')}}"></script>
   <script src="{{asset('classyads/js/jquery-ui.js')}}"></script>
