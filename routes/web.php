@@ -16,8 +16,14 @@ use Illuminate\Support\Facades\Route;
 Auth::routes();
 
 Route::get('/', function () {
-    return view('frontend.home.about');
+    return view('website.index');
 });
+Route::post("/contactus",'FrontEnd\HomeController@postContact')->name("contactus");
+Route::get("/contact",'FrontEnd\HomeController@contactme')->name("contact");
+
+Route::get("/about",'FrontEnd\HomeController@about')->name("about");
+Route::get("/contact",'FrontEnd\HomeController@contact')->name("contact");
+Route::get("/blog",'FrontEnd\HomeController@blog')->name("blog");
 
 
 Route::prefix('admin')->namespace("Admin")->middleware('auth')->group(function () {
@@ -28,6 +34,7 @@ Route::prefix('admin')->namespace("Admin")->middleware('auth')->group(function (
     Route::resource("post",'PostController');
     Route::get("post/delete/{id}",'PostController@destroy')->name('post.delete');
     Route::resource('products' , 'ProductController');
+    Route::get("contact_me",'ContactMeController@index')->name('contactme');
 
 
 Route::get("settings",'SettingController@setting')->name('settings');

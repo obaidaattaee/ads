@@ -76,6 +76,13 @@
                     <span class="arrow"></span>
                </a>
             </i>
+              <li class="nav-item start ">
+                <a href="{{ route('contactme') }}" class="nav-link nav-toggle">
+                    <i class="fa fa-envelope"></i>
+                    <span class="title">contact</span>
+                    <span class="arrow"></span>
+               </a>
+            </i>
         </ul>
     </div>
 </div>

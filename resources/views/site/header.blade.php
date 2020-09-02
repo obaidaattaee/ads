@@ -27,7 +27,7 @@
                 <li class="active"><a href="index.html">Home</a></li>
                 <li><a href="listings.html">Ads</a></li>
                 <li class="has-children">
-                  <a href="about.html">About</a>
+                  <a href="{{ route('about') }}">About</a>
                   <ul class="dropdown">
                     <li><a href="#">The Company</a></li>
                     <li><a href="#">The Leadership</a></li>
@@ -35,8 +35,8 @@
                     <li><a href="#">Careers</a></li>
                   </ul>
                 </li>
-                <li><a href="blog.html">Blog</a></li>
-                <li><a href="contact.html">Contact</a></li>
+                <li><a href="{{ route('blog') }}">Blog</a></li>
+                <li><a href="{{ route('contact') }}">Contact</a></li>
 
                 <li class="ml-xl-3 login"><a href="login.html"><span class="border-left pl-xl-4"></span>Log In</a></li>
                 <li><a href="register.html">Register</a></li>
