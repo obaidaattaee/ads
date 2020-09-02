@@ -21,7 +21,7 @@ Route::get('/', function () {
 
 
 Route::prefix('admin')->namespace("Admin")->middleware('auth')->group(function () {
-    Route::get('home' , function(){return view('dashboard.layouts.app');});
+    Route::get('home' , function(){return view('dashboard.layouts.app');})->middleware('isadmin');
     Route::resource("categories",'CategoryController');
     Route::resource("comments",'CommentController');
     Route::resource("about",'AboutController');
