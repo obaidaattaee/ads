@@ -6,7 +6,28 @@
         <div class="row">
           <div class="col-12  block-13">
             <div class="owl-carousel nonloop-block-13">
-           <div class="d-block d-md-flex listing vertical">
+              @php $listings = \App\Models\Product::get() @endphp
+               @foreach ($listings as $listing )
+                   <div class="d-block d-md-flex listing vertical">
+                  <a href="{{ route('listings') }}" class="img d-block" style="background-image: url('{{asset('storage/'.$listing->image)}}"></a>
+                  <div class="lh-content">
+                    <span class="category">{{ $listing->category_id }}</span>
+                    <a href="#" class="bookmark"><span class="icon-heart"></span></a>
+                    <h3><a href="listings-single.html">{{ $listing->title }}</a></h3>
+                    <address>{{ $listing->address }}</address>
+                    <p class="mb-0">
+                      <span class="icon-star text-warning"></span>
+                      <span class="icon-star text-warning"></span>
+                      <span class="icon-star text-warning"></span>
+                      <span class="icon-star text-warning"></span>
+                      <span class="icon-star text-secondary"></span>
+                      <span class="review">(3 Reviews)</span>
+                    </p>
+                  </div>
+              </div>
+            @endforeach
+              
+              {{-- <div class="d-block d-md-flex listing vertical">
                 <a href="listings-single.html" class="img d-block" style="background-image: url('{{asset('classyads/images/img_2.jpg')}}"></a>
                 <div class="lh-content">
                   <span class="category">Real Estate</span>
@@ -23,131 +44,116 @@
                   </p>
                 </div>
               </div>
-               <div class="d-block d-md-flex listing vertical">
-                <a href="listings-single.html" class="img d-block" style="background-image: url('{{asset('classyads/images/img_2.jpg')}}"></a>
-                <div class="lh-content">
-                  <span class="category">Real Estate</span>
-                  <a href="#" class="bookmark"><span class="icon-heart"></span></a>
-                  <h3><a href="listings-single.html">House with Swimming Pool</a></h3>
-                  <address>Don St, Brooklyn, New York</address>
-                  <p class="mb-0">
-                    <span class="icon-star text-warning"></span>
-                    <span class="icon-star text-warning"></span>
-                    <span class="icon-star text-warning"></span>
-                    <span class="icon-star text-warning"></span>
-                    <span class="icon-star text-secondary"></span>
-                    <span class="review">(3 Reviews)</span>
-                  </p>
+                
+                <div class="d-block d-md-flex listing vertical">
+                  <a href="listings-single.html" class="img d-block" style="background-image: url('{{asset('classyads/images/img_2.jpg')}}"></a>
+                  <div class="lh-content">
+                    <span class="category">Real Estate</span>
+                    <a href="#" class="bookmark"><span class="icon-heart"></span></a>
+                    <h3><a href="listings-single.html">House with Swimming Pool</a></h3>
+                    <address>Don St, Brooklyn, New York</address>
+                    <p class="mb-0">
+                      <span class="icon-star text-warning"></span>
+                      <span class="icon-star text-warning"></span>
+                      <span class="icon-star text-warning"></span>
+                      <span class="icon-star text-warning"></span>
+                      <span class="icon-star text-secondary"></span>
+                      <span class="review">(3 Reviews)</span>
+                    </p>
+                  </div>
                 </div>
-              </div>
 
-              <div class="d-block d-md-flex listing vertical">
-                <a href="listings-single.html" class="img d-block" style="background-image: url('{{asset('classyads/images/img_3.jpg')}}"></a>
-                <div class="lh-content">
-                  <span class="category">Furniture</span>
-                  <a href="#" class="bookmark"><span class="icon-heart"></span></a>
-                  <h3><a href="listings-single.html">Wooden Chair &amp; Table</a></h3>
-                  <address>Don St, Brooklyn, New York</address>
-                  <p class="mb-0">
-                    <span class="icon-star text-warning"></span>
-                    <span class="icon-star text-warning"></span>
-                    <span class="icon-star text-warning"></span>
-                    <span class="icon-star text-warning"></span>
-                    <span class="icon-star text-secondary"></span>
-                    <span class="review">(3 Reviews)</span>
-                  </p>
+                <div class="d-block d-md-flex listing vertical">
+                  <a href="listings-single.html" class="img d-block" style="background-image: url('{{asset('classyads/images/img_3.jpg')}}"></a>
+                  <div class="lh-content">
+                    <span class="category">Furniture</span>
+                    <a href="#" class="bookmark"><span class="icon-heart"></span></a>
+                    <h3><a href="listings-single.html">Wooden Chair &amp; Table</a></h3>
+                    <address>Don St, Brooklyn, New York</address>
+                    <p class="mb-0">
+                      <span class="icon-star text-warning"></span>
+                      <span class="icon-star text-warning"></span>
+                      <span class="icon-star text-warning"></span>
+                      <span class="icon-star text-warning"></span>
+                      <span class="icon-star text-secondary"></span>
+                      <span class="review">(3 Reviews)</span>
+                    </p>
+                  </div>
                 </div>
-              </div>
 
-              <div class="d-block d-md-flex listing vertical">
-                <a href="listings-single.html" class="img d-block" style="background-image: url('{{asset('classyads/images/img_4.jpg')}}"></a>
-                <div class="lh-content">
-                  <span class="category">Electronics</span>
-                  <a href="#" class="bookmark"><span class="icon-heart"></span></a>
-                  <h3><a href="listings-single.html">iPhone X gray</a></h3>
-                  <address>Don St, Brooklyn, New York</address>
-                  <p class="mb-0">
-                    <span class="icon-star text-warning"></span>
-                    <span class="icon-star text-warning"></span>
-                    <span class="icon-star text-warning"></span>
-                    <span class="icon-star text-warning"></span>
-                    <span class="icon-star text-secondary"></span>
-                    <span class="review">(3 Reviews)</span>
-                  </p>
+                <div class="d-block d-md-flex listing vertical">
+                  <a href="listings-single.html" class="img d-block" style="background-image: url('{{asset('classyads/images/img_4.jpg')}}"></a>
+                  <div class="lh-content">
+                    <span class="category">Electronics</span>
+                    <a href="#" class="bookmark"><span class="icon-heart"></span></a>
+                    <h3><a href="listings-single.html">iPhone X gray</a></h3>
+                    <address>Don St, Brooklyn, New York</address>
+                    <p class="mb-0">
+                      <span class="icon-star text-warning"></span>
+                      <span class="icon-star text-warning"></span>
+                      <span class="icon-star text-warning"></span>
+                      <span class="icon-star text-warning"></span>
+                      <span class="icon-star text-secondary"></span>
+                      <span class="review">(3 Reviews)</span>
+                    </p>
+                  </div>
                 </div>
-              </div>
 
-              <div class="d-block d-md-flex listing vertical">
-                <a href="listings-single.html" class="img d-block" style="background-image: url('{{asset('classyads/images/img_1.jpg')}}"></a>
-                <div class="lh-content">
-                  <span class="category">Cars &amp; Vehicles</span>
-                  <a href="#" class="bookmark"><span class="icon-heart"></span></a>
-                  <h3><a href="listings-single.html">Red Luxury Car</a></h3>
-                  <address>Don St, Brooklyn, New York</address>
-                  <p class="mb-0">
-                    <span class="icon-star text-warning"></span>
-                    <span class="icon-star text-warning"></span>
-                    <span class="icon-star text-warning"></span>
-                    <span class="icon-star text-warning"></span>
-                    <span class="icon-star text-secondary"></span>
-                    <span class="review">(3 Reviews)</span>
-                  </p>
+                <div class="d-block d-md-flex listing vertical">
+                  <a href="listings-single.html" class="img d-block" style="background-image: url('{{asset('classyads/images/img_1.jpg')}}"></a>
+                  <div class="lh-content">
+                    <span class="category">Cars &amp; Vehicles</span>
+                    <a href="#" class="bookmark"><span class="icon-heart"></span></a>
+                    <h3><a href="listings-single.html">Red Luxury Car</a></h3>
+                    <address>Don St, Brooklyn, New York</address>
+                    <p class="mb-0">
+                      <span class="icon-star text-warning"></span>
+                      <span class="icon-star text-warning"></span>
+                      <span class="icon-star text-warning"></span>
+                      <span class="icon-star text-warning"></span>
+                      <span class="icon-star text-secondary"></span>
+                      <span class="review">(3 Reviews)</span>
+                    </p>
+                  </div>
                 </div>
-              </div>
 
-              <div class="d-block d-md-flex listing vertical">
-                <a href="listings-single.html" class="img d-block" style="background-image: url('{{asset('classyads/images/img_2.jpg')}}"></a>
-                <div class="lh-content">
-                  <span class="category">Real Estate</span>
-                  <a href="#" class="bookmark"><span class="icon-heart"></span></a>
-                  <h3><a href="listings-single.html">House with Swimming Pool</a></h3>
-                  <address>Don St, Brooklyn, New York</address>
-                  <p class="mb-0">
-                    <span class="icon-star text-warning"></span>
-                    <span class="icon-star text-warning"></span>
-                    <span class="icon-star text-warning"></span>
-                    <span class="icon-star text-warning"></span>
-                    <span class="icon-star text-secondary"></span>
-                    <span class="review">(3 Reviews)</span>
-                  </p>
+                <div class="d-block d-md-flex listing vertical">
+                  <a href="listings-single.html" class="img d-block" style="background-image: url('{{asset('classyads/images/img_2.jpg')}}"></a>
+                  <div class="lh-content">
+                    <span class="category">Real Estate</span>
+                    <a href="#" class="bookmark"><span class="icon-heart"></span></a>
+                    <h3><a href="listings-single.html">House with Swimming Pool</a></h3>
+                    <address>Don St, Brooklyn, New York</address>
+                    <p class="mb-0">
+                      <span class="icon-star text-warning"></span>
+                      <span class="icon-star text-warning"></span>
+                      <span class="icon-star text-warning"></span>
+                      <span class="icon-star text-warning"></span>
+                      <span class="icon-star text-secondary"></span>
+                      <span class="review">(3 Reviews)</span>
+                    </p>
+                  </div>
                 </div>
-              </div>
 
-              <div class="d-block d-md-flex listing vertical">
-                <a href="listings-single.html" class="img d-block" style="background-image: url('{{asset('classyads/images/img_3.jpg')}}"></a>
-                <div class="lh-content">
-                  <span class="category">Furniture</span>
-                  <a href="#" class="bookmark"><span class="icon-heart"></span></a>
-                  <h3><a href="listings-single.html">Wooden Chair &amp; Table</a></h3>
-                  <address>Don St, Brooklyn, New York</address>
-                  <p class="mb-0">
-                    <span class="icon-star text-warning"></span>
-                    <span class="icon-star text-warning"></span>
-                    <span class="icon-star text-warning"></span>
-                    <span class="icon-star text-warning"></span>
-                    <span class="icon-star text-secondary"></span>
-                    <span class="review">(3 Reviews)</span>
-                  </p>
-                </div>
-              </div>
+                <div class="d-block d-md-flex listing vertical">
+                  <a href="listings-single.html" class="img d-block" style="background-image: url('{{asset('classyads/images/img_3.jpg')}}"></a>
+                  <div class="lh-content">
+                    <span class="category">Furniture</span>
+                    <a href="#" class="bookmark"><span class="icon-heart"></span></a>
+                    <h3><a href="listings-single.html">Wooden Chair &amp; Table</a></h3>
+                    <address>Don St, Brooklyn, New York</address>
+                    <p class="mb-0">
+                      <span class="icon-star text-warning"></span>
+                      <span class="icon-star text-warning"></span>
+                      <span class="icon-star text-warning"></span>
+                      <span class="icon-star text-warning"></span>
+                      <span class="icon-star text-secondary"></span>
+                      <span class="review">(3 Reviews)</span>
+                    </p>
+                  </div>
+                </div> --}}
 
-              <div class="d-block d-md-flex listing vertical">
-                <a href="listings-single.html" class="img d-block" style="background-image: url('{{asset('classyads/images/img_4.jpg')}}"></a>
-                <div class="lh-content">
-                  <span class="category">Electronics</span>
-                  <a href="#" class="bookmark"><span class="icon-heart"></span></a>
-                  <h3><a href="listings-single.html">iPhone X gray</a></h3>
-                  <address>Don St, Brooklyn, New York</address>
-                  <p class="mb-0">
-                    <span class="icon-star text-warning"></span>
-                    <span class="icon-star text-warning"></span>
-                    <span class="icon-star text-warning"></span>
-                    <span class="icon-star text-warning"></span>
-                    <span class="icon-star text-secondary"></span>
-                    <span class="review">(3 Reviews)</span>
-                  </p>
-                </div>
-              </div> 
+                 
 
             </div>
           </div>
