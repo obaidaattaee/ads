@@ -67,6 +67,7 @@ class ProductController extends Controller
         $request['published'] = $request['published'] ? 1 : 0;
         $imageName = basename($request->imageFile->store("public"));
         $request['image'] = $imageName;
+        $request['user_id'] = auth()->id();
         Product::create($request->all());
         session()->flash('msg', "s: product create successfully");
         return redirect(route('products.index'));

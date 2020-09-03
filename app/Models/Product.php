@@ -15,6 +15,9 @@ class Product extends Model
         "reviews",
         "address",
         "category_id",
+        'price' ,
+        'model',
+        'user_id',
         "published",
     ];
     protected $appends = ["brand_name", "category_name"];
