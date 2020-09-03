@@ -1,7 +1,14 @@
+<<<<<<< HEAD
 <?php
   use App\Models\Setting;
+=======
+@php
+
+use App\Models\Setting;
+
+>>>>>>> 6c923bb9ef054eb6bd39bb5794cc61c09286aa2b
 $settings = Setting::first();
-?>
+@endphp
 <footer class="site-footer">
     <div class="container">
         <div class="row">

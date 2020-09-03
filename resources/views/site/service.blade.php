@@ -1,9 +1,10 @@
     <div class="site-section bg-light">
       <div class="container">
-        
+
         <div class="overlap-category mb-5">
           <div class="row align-items-stretch no-gutters">
-             @php $categories = \App\Models\category::get() @endphp
+             @php $categories = \App\Models\Category::get() @endphp
+              @if($categories != null)
               @foreach ($categories as $category )
               <div class="col-sm-6 col-md-4 mb-4 mb-lg-0 col-lg-2">
                 <a href="#" class="popular-category h-100">
@@ -13,9 +14,11 @@
                 </a>
               </div>
               @endforeach
-              
-          
-              
+              @else
+                  <h1>no items </h1>
+                  @endif
+
+
                {{-- <div class="col-sm-6 col-md-4 mb-4 mb-lg-0 col-lg-2">
                 <a href="#" class="popular-category h-100">
                   <span class="icon"><span class="flaticon-books"></span></span>
@@ -53,4 +56,4 @@
               </div>  --}}
           </div>
         </div>
-        
+
