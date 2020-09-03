@@ -41,7 +41,7 @@
                 <li class="ml-xl-3 login"><a href="login.html"><span class="border-left pl-xl-4"></span>Log In</a></li>
                 <li><a href="register.html">Register</a></li>
 
-                <li><a href="#" class="cta"><span class="bg-primary text-white rounded">+ Post an Ad</span></a></li>
+                <li><a href="{{ route('post-view') }}" class="cta"><span class="bg-primary text-white rounded">+ Post an Ad</span></a></li>
               </ul>
             </nav>
           </div>

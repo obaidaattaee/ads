@@ -16,6 +16,7 @@ use Illuminate\Support\Facades\Route;
 Auth::routes();
 Route::get("/singleAd",'FrontEnd\HomeController@adSingle')->name("listings");
 Route::get("/",'FrontEnd\HomeController@index')->name("home-view");
+
 //
 //Route::get('/', function () {
 //    return view('website.index');
@@ -23,6 +24,11 @@ Route::get("/",'FrontEnd\HomeController@index')->name("home-view");
 Route::get('ads', function () {
     return view('website.ads');
 });
+
+
+Route::get("/view",'FrontEnd\PostAdController@PostAd')->name("post-view");
+
+
 Route::post("/contactus",'FrontEnd\HomeController@postContact')->name("contactus");
 Route::get("/contact",'FrontEnd\HomeController@contactme')->name("contact");
 
@@ -50,4 +56,3 @@ Route::post("settings",'SettingController@store')->name('post-settings');
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::post('postnewslatteremail' , 'Admin\NewsletterController@create')->name('post.email');
-
