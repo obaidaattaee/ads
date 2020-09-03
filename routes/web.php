@@ -26,7 +26,8 @@ Route::get('ads', function () {
 });
 
 
-Route::get("/view",'FrontEnd\PostAdController@PostAd')->name("post-view");
+Route::get("/view",'FrontEnd\PostAdController@PostAd')->name("post-view")->middleware('auth');
+Route::post("/postproduct",'FrontEnd\ProductController@store')->name("post-product")->middleware('auth');
 
 
 Route::post("/contactus",'FrontEnd\HomeController@postContact')->name("contactus");
@@ -38,7 +39,7 @@ Route::get("/blog",'FrontEnd\HomeController@blog')->name("blog");
 
 
 Route::prefix('admin')->namespace("Admin")->middleware('auth')->group(function () {
-    Route::get('home' , function(){return view('dashboard.layouts.app');})->middleware('isadmin');
+    Route::get('home' , function(){return view('dashboard.layouts.app');});
     Route::resource("categories",'CategoryController');
     Route::resource("comments",'CommentController');
     Route::resource("about",'AboutController');
