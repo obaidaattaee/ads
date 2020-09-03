@@ -23,7 +23,7 @@
               </div>
 
             </div>
-            <div class="col-md-6 mb-4 mb-lg-4 col-lg-4">
+            {{-- <div class="col-md-6 mb-4 mb-lg-4 col-lg-4">
               
               <div class="listing-item">
                 <div class="listing-image">
@@ -82,7 +82,7 @@
                 </div>
               </div>
 
-            </div>
+            </div> --}}
         </div>
       </div>
     </div>

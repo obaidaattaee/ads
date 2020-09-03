@@ -1,5 +1,5 @@
 <?php
-    use App\Models\Setting;
+  use App\Models\Setting;
 $settings = Setting::first();
 ?>
 <footer class="site-footer">
