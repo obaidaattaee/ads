@@ -17,6 +17,8 @@ Auth::routes();
 Route::get("/singleAd",'FrontEnd\HomeController@adSingle')->name("listings");
 Route::get("/",'FrontEnd\HomeController@index')->name("home-view");
 
+Route::get("/view",'FrontEnd\PostAdController@PostAd')->name("post-view");
+
 
 Route::post("/contactus",'FrontEnd\HomeController@postContact')->name("contactus");
 Route::get("/contact",'FrontEnd\HomeController@contactme')->name("contact");
@@ -45,6 +47,3 @@ Route::post("settings",'SettingController@store')->name('post-settings');
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::post('postnewslatteremail' , 'Admin\NewsletterController@create')->name('post.email');
-
-
-Route::get('/home', 'HomeController@index')->name('home');
