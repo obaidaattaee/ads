@@ -1,5 +1,12 @@
-   
-    <div class="site-blocks-cover inner-page-cover overlay" style="background-image: url(images/hero_1.jpg);" data-aos="fade" data-stellar-background-ratio="0.5">
+@extends("frontend.layout")
+@section("title","Contact Us")
+@section("content")
+
+<?php
+    use App\Models\Setting;
+$settings = Setting::first();
+?> 
+    <div class="site-blocks-cover inner-page-cover overlay" style="background-image: url({{asset('classyads/images/hero_1.jpg')}}" data-aos="fade" data-stellar-background-ratio="0.5">
       <div class="container">
         <div class="row align-items-center justify-content-center text-center">
 
@@ -26,17 +33,17 @@
 
             
 
-            <form action="#" class="p-5 bg-white">
-             
-
+            <form action="{{ route('contactus') }}" method="POST" class="p-5 bg-white">
+             @csrf 
+				     	@include("shared.msg")
               <div class="row form-group">
                 <div class="col-md-6 mb-3 mb-md-0">
                   <label class="text-black" for="fname">First Name</label>
-                  <input type="text" id="fname" class="form-control">
+                  <input type="text" id="fname" name="fname" class="form-control">
                 </div>
                 <div class="col-md-6">
                   <label class="text-black" for="lname">Last Name</label>
-                  <input type="text" id="lname" class="form-control">
+                  <input type="text" id="lname"  name="lname" class="form-control">
                 </div>
               </div>
 
@@ -44,7 +51,7 @@
                 
                 <div class="col-md-12">
                   <label class="text-black" for="email">Email</label> 
-                  <input type="email" id="email" class="form-control">
+                  <input type="email" id="email"  name="email" class="form-control">
                 </div>
               </div>
 
@@ -52,7 +59,7 @@
                 
                 <div class="col-md-12">
                   <label class="text-black" for="subject">Subject</label> 
-                  <input type="subject" id="subject" class="form-control">
+                  <input type="subject" id="subject"  name="subject" class="form-control">
                 </div>
               </div>
 
@@ -76,13 +83,13 @@
             
             <div class="p-4 mb-3 bg-white">
               <p class="mb-0 font-weight-bold">Address</p>
-              <p class="mb-4">203 Fake St. Mountain View, San Francisco, California, USA</p>
+              <p class="mb-4">203 Fake St.{{$settings->address??''}}</p>
 
               <p class="mb-0 font-weight-bold">Phone</p>
-              <p class="mb-4"><a href="#">+1 232 3235 324</a></p>
+              <p class="mb-4"><a href="#">{{$settings->phone??''}}</a></p>
 
               <p class="mb-0 font-weight-bold">Email Address</p>
-              <p class="mb-0"><a href="#">youremail@domain.com</a></p>
+              <p class="mb-0"><a href="#">{{$settings->email??''}}</a></p>
 
             </div>
             
@@ -155,21 +162,4 @@
       </div>
     </div>
 
-
-    <div class="newsletter bg-primary py-5">
-      <div class="container">
-        <div class="row align-items-center">
-          <div class="col-md-6">
-            <h2>Newsletter</h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-          </div>
-          <div class="col-md-6">
-            
-            <form class="d-flex">
-              <input type="text" class="form-control" placeholder="Email">
-              <input type="submit" value="Subscribe" class="btn btn-white"> 
-            </form>
-          </div>
-        </div>
-      </div>
-    </div>
+ @endsection

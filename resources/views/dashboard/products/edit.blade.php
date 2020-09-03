@@ -30,17 +30,16 @@
                     </select>
                 </div>
 
-
-                <div class="form-group row">
-                    <div class='col-sm-6'>
-                        <label for="imageFile">Image</label>
-                        <div class="custom-file">
-                            <input type="file" name="imageFile" class="custom-file-input" id="imageFile">
-                        </div>
+                  <div class="form-body">
+                    <div class="form-group form-md-line-input has-success">
+                        <input type="file" name="imageFile" class="form-control custom-file-input" id="form_control_1">
+                        <label for="form_control_1">Image</label>
+                    </div>
+                    <div>
+                        <img src="{{asset("storage/".$product->image)}}" width='240' class='img-thumbnail'>
                     </div>
                 </div>
-
-
+                
                 <div class="form-group ">
                     <label for="price">new price</label>
                     <input   type="number" class="form-control" value="{{old('price')??$product->price}}" id="price" name="price">

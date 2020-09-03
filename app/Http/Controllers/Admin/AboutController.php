@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Models\About;
 use Illuminate\Http\Request;
+use App\Http\Requests\AboutRequest;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Session;
 
@@ -57,7 +58,7 @@ class AboutController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(AboutRequest $request)
     {
         if(!$request->published){
             $request['published']=0;

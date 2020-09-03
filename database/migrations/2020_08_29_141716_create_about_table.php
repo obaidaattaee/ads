@@ -16,7 +16,7 @@ class CreateAboutTable extends Migration
         Schema::create('about', function (Blueprint $table) {
             $table->id();
             $table->text('whyUs');
-            $table->string('image');
+          //  $table->string('image')->nullable;
             $table->boolean('published')->default(0);
 
             $table->timestamps();

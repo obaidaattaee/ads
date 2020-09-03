@@ -1,25 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <title>ClassyAds &mdash; Colorlib Website Template</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic:400,700,800" rel="stylesheet">
-    <link rel="stylesheet" href="{{asset('classyads/fonts/icomoon/style.css')}}">
-
-    <link rel="stylesheet" href="{{asset('classyads/css/bootstrap.min.css')}}">
-    <link rel="stylesheet" href="{{asset('classyads/css/magnific-popup.css')}}">
-    <link rel="stylesheet" href="{{asset('classyads/css/jquery-ui.css')}}">
-    <link rel="stylesheet" href="{{asset('classyads/css/owl.carousel.min.css')}}">
-    <link rel="stylesheet" href="{{asset('classyads/css/owl.theme.default.min.css')}}">
-    <link rel="stylesheet" href="{{asset('classyads/css/bootstrap-datepicker.css')}}">
-    <link rel="stylesheet" href="{{asset('classyads/fonts/flaticon/font/flaticon.css')}}">
-    <link rel="stylesheet" href="{{asset('classyads/css/aos.css')}}">
-    <link rel="stylesheet" href="{{asset('classyads/css/rangeslider.css')}}">
-    <link rel="stylesheet" href="{{asset('classyads/css/style.css')}}">
-    
-  </head>
   <body>
   
   <div class="site-wrap">
@@ -45,10 +24,10 @@
             <nav class="site-navigation position-relative text-right" role="navigation">
 
               <ul class="site-menu js-clone-nav mr-auto d-none d-lg-block">
-                <li class="active"><a href="index.html">Home</a></li>
-                <li><a href="listings.html">Ads</a></li>
+                <li class="active"><a href="{{ route('home-view') }}">Home</a></li>
+                <li><a href="{{ route('listings') }}">Ads</a></li>
                 <li class="has-children">
-                  <a href="about.html">About</a>
+                  <a href="{{ route('about') }}">About</a>
                   <ul class="dropdown">
                     <li><a href="#">The Company</a></li>
                     <li><a href="#">The Leadership</a></li>
@@ -56,8 +35,8 @@
                     <li><a href="#">Careers</a></li>
                   </ul>
                 </li>
-                <li><a href="blog.html">Blog</a></li>
-                <li><a href="contact.html">Contact</a></li>
+                <li><a href="{{ route('blog') }}">Blog</a></li>
+                <li><a href="{{ route('contact') }}">Contact</a></li>
 
                 <li class="ml-xl-3 login"><a href="login.html"><span class="border-left pl-xl-4"></span>Log In</a></li>
                 <li><a href="register.html">Register</a></li>
