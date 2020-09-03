@@ -36,7 +36,7 @@ Route::get("/contact",'FrontEnd\HomeController@contactme')->name("contact");
 Route::get("/about",'FrontEnd\HomeController@about')->name("about");
 Route::get("/contact",'FrontEnd\HomeController@contact')->name("contact");
 Route::get("/blog",'FrontEnd\HomeController@blog')->name("blog");
-
+Route::resource('post' , 'FrontEnd\PostController');
 
 Route::prefix('admin')->namespace("Admin")->middleware('auth')->group(function () {
     Route::get('home' , function(){return view('dashboard.layouts.app');});

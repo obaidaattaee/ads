@@ -41,16 +41,17 @@
 
                 <div class="form-group ">
                     <label for="price">new price</label>
-                    <input   type="number" class="form-control" value="{{old('price')}}" id="price" name="price">
+                    <input type="number" class="form-control" value="{{old('price')}}" id="price" name="price">
                 </div>
 
                 <div class="form-group">
                     <label for="description">Description</label>
-                    <textarea  class="form-control"  id="description" value="{{old('description')}}" name="description" ></textarea>
+                    <textarea class="form-control" id="description" value="{{old('description')}}"
+                              name="description"></textarea>
                 </div>
                 <div class="form-group">
                     <label for="address">Address</label>
-                    <input type="text" class="form-control"  id="address" value="{{old('address')}}" name="address" >
+                    <input type="text" class="form-control" id="address" value="{{old('address')}}" name="address">
                 </div>
                 <div class="form-check">
                     <input type="checkbox" name='published' value="1" class="form-check-input" id="published">
