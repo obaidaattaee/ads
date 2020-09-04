@@ -24,12 +24,12 @@ class CreateRequest extends FormRequest
     public function rules()
     {
 //        dd($this->all());
-        $id = $this->route('product');
+        $id = $this->route('post');
 
 		return [
-            'title' => 'required|unique:categories,title,'.$id.',id',
-            'imageFile' => 'required|image',
+            'title' => 'required|unique:posts,title,'.$id.',id',
             'description' => 'min:10',
+            'imageFile' => 'required|image',
 
 		];
     }

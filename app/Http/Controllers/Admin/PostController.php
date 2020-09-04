@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Admin;
 use App\Models\Post;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Post\EditRequest;
+use App\Http\Requests\Post\CreateRequest;
 
 class PostController extends Controller
 {
@@ -33,7 +35,7 @@ class PostController extends Controller
         return view('dashboard.post.create');
     }
 
-    public function store(Request $request){
+    public function store(CreateRequest $request){
         $request['user_id'] = auth()->id();
 //        dd($request->all());
         $request['published'] = $request['published'] ? 1 : 0;
@@ -58,6 +60,24 @@ class PostController extends Controller
             return redirect(route('posts.index'));
         }
         return view('dashboard.post.edit')->with('post' , $post);
+    }
+    public function update(EditRequest $request, $id)
+    {
+        //
+        if(!$request->published ){
+            $request['published']=0;
+        }
+     
+        if($request->imageFile){
+            $imageName = basename($request->imageFile->store("public"));
+            $request['image'] = $imageName;
+        }
+    
+        Post::find($id)->update($request->all());
+       
+       
+        session()->flash("msg", "Post Updated Successfully");
+        return redirect(route("post.index"));
     }
 
     public function destroy($id)

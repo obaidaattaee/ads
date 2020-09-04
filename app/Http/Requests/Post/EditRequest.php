@@ -4,7 +4,7 @@ namespace App\Http\Requests\Post;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class CreateRequest extends FormRequest
+class EditRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,13 +24,11 @@ class CreateRequest extends FormRequest
     public function rules()
     {
 //        dd($this->all());
-        $id = $this->route('product');
+        $id = $this->route('post');
 
-		return [
-            'title' => 'required|unique:categories,title,'.$id.',id',
-            'imageFile' => 'required|image',
+        return [
+            'title' => 'required',
             'description' => 'min:10',
-
-		];
+        ];
     }
 }

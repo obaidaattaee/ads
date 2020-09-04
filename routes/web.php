@@ -47,6 +47,10 @@ Route::prefix('admin')->namespace("Admin")->middleware('auth')->group(function (
     Route::get("post/delete/{id}",'PostController@destroy')->name('post.delete');
     Route::resource('products' , 'ProductController');
     Route::get("contact_me",'ContactMeController@index')->name('contactme');
+    Route::resource("contact_",'ContactMeController');
+    
+    Route::get("post/edit/{id}",'PostController@edit');
+    Route::post("post/edit/{id}",'PostController@update');
 
 
 Route::get("settings",'SettingController@setting')->name('settings');

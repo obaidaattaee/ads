@@ -53,6 +53,8 @@
             @endforeach
             </tbody>
         </table>
+        {{ $categories->links() }}
+
     @else
         <div class='alert alert-warning'>Sorry, there is no results to your search</div>
 

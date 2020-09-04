@@ -32,7 +32,7 @@
         <thead>
             <tr>
                 <th>userID</th>
-                <th>name</th>
+                <th>title</th>
                 <th>Image</th>
                 <th>description</th>
                 <th>Published</th>
@@ -45,7 +45,7 @@
         <tr>
             <td>{{ $post->user_id}}</td>
 
-            <td><a href="{{ route("post.show", $post->id) }}">{{ $post->name }}</a></td>
+            <td><a href="{{ route("post.show", $post->id) }}">{{ $post->title }}</a></td>
 
             <td><img width="100" src='{{ asset("storage/".$post->image)}}' ></td>
 
@@ -55,15 +55,15 @@
             <td><input type="checkbox" disabled {{$post->published?"checked":"" }}/></td>
 
             <td width="20%">
-                <form method="post" action="{{ route('post.destroy', $post->id) }}">
+               <form method="post" action="{{ route('post.destroy', $post->id) }}">
 
-{{--                    <a href="{{route('post.edit' , $post->id)}}" class="btn btn-primary btn-sm"><i class='fa fa-edit'></i></a>--}}
-                    <a href="{{ route('post.delete' , $post->id) }}" onclick='return confirm("Are you sure delete?")' class="btn btn-warning btn-sm"><i class='fa fa-trash'></i></a>
-
-                    @csrf
-                    @method("DELETE")
-
-                </form>
+                            <a href="{{ route('post.edit', $post->id) }}" class="btn btn-primary btn-sm"><i
+                                    class='fa fa-edit'></i></a>
+                            <button onclick='return confirm("Are you sure??")' type="submit"
+                                    class="btn btn-danger btn-sm"><i class='fa fa-trash'></i></button>
+                            @csrf
+                            @method("DELETE")
+                        </form>
             </td>
         </tr>
             @endforeach

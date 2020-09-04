@@ -116,5 +116,6 @@ $abouts = About::first();
         </div>
       </div>
     </div>
-
+  @include("site.subscribe")
+ @include("site.footer")
  @endsection

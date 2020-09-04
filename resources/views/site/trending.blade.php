@@ -12,7 +12,7 @@ $products = Product::orderBy('reviews')->take(6)->get();
         </div>
         <div class="row mt-5">
             <div class="col-lg-6">
-@for($i = 0 ; $i <= (count($products)/2) + 1  ; $i++ )
+              {{-- @for($i = 0 ; $i <= (count($products)/2) + 1  ; $i++ )
 
                 <div class="d-block d-md-flex listing">
                     <a href="listings-single.html" class="img d-block" style="background-image: url('{{ asset('storage/'.$products[$i]->image) }}')"></a>
@@ -55,7 +55,7 @@ $products = Product::orderBy('reviews')->take(6)->get();
                         </div>
                     </div>
 
-                @endfor
+                @endfor --}}
             </div>
         </div>
     </div>

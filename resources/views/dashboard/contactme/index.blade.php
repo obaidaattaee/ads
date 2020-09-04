@@ -44,7 +44,7 @@
 
                             <td>
                                 <div class="btn-group">
-                                    {{-- <form method="post" action="{{ route('contact_me.destroy', $contact->id) }}"> --}}
+                                    <form method="post" action="{{ route('contact_.destroy', $contact->id) }}">
 {{--                                        <a href="{{route('offers.edit',$offer->id)}}" type="button" class="btn btn-success">Edit</a>--}}
                                         <button onclick='return confirm("Are you sure delete ?")' type="submit" class="btn btn-danger">Delele</button>
                                     @csrf

@@ -132,5 +132,6 @@
       </div>
     </div>
 
-
+@include("site.subscribe")
+ @include("site.footer")
  @endsection

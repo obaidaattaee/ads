@@ -20,6 +20,6 @@ class ContactMeController extends Controller
     public function destroy($id){
         ContactMe::destroy($id);
         session()->flash("msg", "w: Deleted Successfully");
-        return redirect(route("contact_me.index"));
+        return redirect(route("contactme"));
     }
 }

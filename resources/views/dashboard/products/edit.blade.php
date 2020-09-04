@@ -53,9 +53,14 @@
                     <label for="address">Address</label>
                     <input type="text" class="form-control"  id="address" value="{{old('address')??$product->address}}" name="address" >
                 </div>
-                <div class="form-check">
-                    <input type="checkbox" name='published' value="1" class="form-check-input" id="published" {{$product->published ==1 ?"checked" : ""}}>
-                    <label class="form-check-label" for='active'>published</label>
+               <div class="md-checkbox-inline">
+                    <div class="md-checkbox">
+                        <input type="checkbox" id="checkbox6" class="md-check" name="published" value="1" {{ (old('published')?? $product->published)?"checked":"" }}>
+                        <label for="checkbox6">
+                            <span></span>
+                            <span class="check"></span>
+                            <span class="box"></span> Published </label>
+                    </div>
                 </div>
                 <div class="card-footer mt-3">
                     <button type="submit" class="btn btn-primary">Submit</button>
