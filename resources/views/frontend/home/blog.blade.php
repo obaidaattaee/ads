@@ -1,8 +1,8 @@
-@extends("frontend.layout")
-@section("title","Blog")
+ 
+ @extends("frontend.layout")
+@section("title","Blog Us")
 @section("content")
-
-<div class="site-blocks-cover inner-page-cover overlay" style="background-image: url({{asset('classyads/images/hero_1.jpg')}});" data-aos="fade" data-stellar-background-ratio="0.5">
+  <div class="site-blocks-cover inner-page-cover overlay" style="background-image: url('{{asset('classyads/images/hero_1.jpg')}}" data-aos="fade" data-stellar-background-ratio="0.5">
       <div class="container">
         <div class="row align-items-center justify-content-center text-center">
 
@@ -11,7 +11,7 @@
             
             <div class="row justify-content-center mt-5">
               <div class="col-md-8 text-center">
-                <h1>Blog</h1>
+                <h1>Blog Us</h1>
                 <p class="mb-0">Choose product you want</p>
               </div>
             </div>
@@ -40,7 +40,7 @@
               </div>
               <div class="col-md-6 col-lg-6 mb-4 mb-lg-4">
                 <div class="h-entry">
-                  <img src="{{asset('classyads/images/img_2.jpg')}}" alt="Image" class="img-fluid rounded">
+                  <img src="{{asset('classyads/images/img_1.jpg')}}" alt="Image" class="img-fluid rounded">
                   <h2 class="font-size-regular"><a href="#" class="text-black">Many People Selling Online</a></h2>
                   <div class="meta mb-3">by Mark Spiker<span class="mx-1">&bullet;</span> Jan 18, 2019 <span class="mx-1">&bullet;</span> <a href="#">News</a></div>
                   <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus eligendi nobis ea maiores sapiente veritatis reprehenderit suscipit quaerat rerum voluptatibus a eius.</p>
@@ -48,7 +48,7 @@
               </div>
               <div class="col-md-6 col-lg-6 mb-4 mb-lg-4">
                 <div class="h-entry">
-                  <img src="{{asset('classyads/images/img_3.jpg')}}" alt="Image" class="img-fluid rounded">
+                  <img src="{{asset('classyads/images/img_1.jpg')}}" alt="Image" class="img-fluid rounded">
                   <h2 class="font-size-regular"><a href="#" class="text-black">Many People Selling Online</a></h2>
                   <div class="meta mb-3">by Mark Spiker<span class="mx-1">&bullet;</span> Jan 18, 2019 <span class="mx-1">&bullet;</span> <a href="#">News</a></div>
                   <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus eligendi nobis ea maiores sapiente veritatis reprehenderit suscipit quaerat rerum voluptatibus a eius.</p>
@@ -58,7 +58,7 @@
 
               <div class="col-md-6 col-lg-6 mb-4 mb-lg-4">
                 <div class="h-entry">
-                  <img src="{{asset('classyads/images/img_4.jpg')}}" alt="Image" class="img-fluid rounded">
+                  <img src="{{asset('classyads/images/img_1.jpg')}}" alt="Image" class="img-fluid rounded">
                   <h2 class="font-size-regular"><a href="#" class="text-black">Many People Selling Online</a></h2>
                   <div class="meta mb-3">by Mark Spiker<span class="mx-1">&bullet;</span> Jan 18, 2019 <span class="mx-1">&bullet;</span> <a href="#">News</a></div>
                   <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus eligendi nobis ea maiores sapiente veritatis reprehenderit suscipit quaerat rerum voluptatibus a eius.</p>
@@ -66,7 +66,7 @@
               </div>
               <div class="col-md-6 col-lg-6 mb-4 mb-lg-4">
                 <div class="h-entry">
-                  <img src="{{asset('classyads/images/img_2.jpg')}}" alt="Image" class="img-fluid rounded">
+                  <img src="{{asset('classyads/images/img_1.jpg')}}" alt="Image" class="img-fluid rounded">
                   <h2 class="font-size-regular"><a href="#" class="text-black">Many People Selling Online</a></h2>
                   <div class="meta mb-3">by Mark Spiker<span class="mx-1">&bullet;</span> Jan 18, 2019 <span class="mx-1">&bullet;</span> <a href="#">News</a></div>
                   <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus eligendi nobis ea maiores sapiente veritatis reprehenderit suscipit quaerat rerum voluptatibus a eius.</p>
@@ -74,7 +74,7 @@
               </div>
               <div class="col-md-6 col-lg-6 mb-4 mb-lg-4">
                 <div class="h-entry">
-                  <img src="{{asset('classyads/images/img_3.jpg')}}" alt="Image" class="img-fluid rounded">
+                  <img src="{{asset('classyads/images/img_1.jpg')}}" alt="Image" class="img-fluid rounded">
                   <h2 class="font-size-regular"><a href="#" class="text-black">Many People Selling Online</a></h2>
                   <div class="meta mb-3">by Mark Spiker<span class="mx-1">&bullet;</span> Jan 18, 2019 <span class="mx-1">&bullet;</span> <a href="#">News</a></div>
                   <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus eligendi nobis ea maiores sapiente veritatis reprehenderit suscipit quaerat rerum voluptatibus a eius.</p>

@@ -74,8 +74,6 @@ class PostController extends Controller
         }
     
         Post::find($id)->update($request->all());
-       
-       
         session()->flash("msg", "Post Updated Successfully");
         return redirect(route("post.index"));
     }

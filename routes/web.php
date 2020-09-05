@@ -48,7 +48,11 @@ Route::prefix('admin')->namespace("Admin")->middleware('auth')->group(function (
     Route::resource('products' , 'ProductController');
     Route::get("contact_me",'ContactMeController@index')->name('contactme');
     Route::resource("contact_",'ContactMeController');
-    
+    //  Route::post("testimonial",'TestimonialController@store')->name('PostTest');
+    Route::resource("testimonial",'TestimonialController');
+    Route::get("testimonial",'TestimonialController@index')->name('x1');
+    // Route::post("testimonial/edit/{id}",'PostController@update');
+
     Route::get("post/edit/{id}",'PostController@edit');
     Route::post("post/edit/{id}",'PostController@update');
 

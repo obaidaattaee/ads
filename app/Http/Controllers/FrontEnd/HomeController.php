@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\FrontEnd;
 
+use App\Models\Post;
 use App\Models\ContactMe;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -28,7 +29,6 @@ class HomeController extends Controller
         return view("frontend.home.contact");
     }  
     public function blog(){
-
         return view("frontend.home.blog");
     } 
     
