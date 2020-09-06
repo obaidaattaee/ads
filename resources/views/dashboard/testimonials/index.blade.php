@@ -3,9 +3,10 @@
 
 
 @section("content")
- 
+<div class="col-2">
     <a href="{{route('testimonial.create')}}" class="btn btn-success pull-right">Create New menu item</a>
-
+</div>
+    @if($testimonials->count()>0)
     <table align="center" class="table table-striped mt-3 table-bordered table-hover">
         <thead>
             <tr>
@@ -21,7 +22,7 @@
             @foreach($testimonials as $testimonial)
         <tr>
 
-            <td><a href="{{ route("post.show", $testimonial->id) }}">{{ $testimonial->name }}</a></td>
+            <td><a href="{{ route("testimonial.show", $testimonial->id) }}">{{ $testimonial->name }}</a></td>
 
             <td><img width="100" src='{{ asset("storage/".$testimonial->image)}}' ></td>
 
@@ -45,5 +46,10 @@
             @endforeach
         </tbody>
     </table>
+        {{ $testimonials->links() }}
+    @else
+        <div class='alert alert-warning'>Sorry, there is no results to your search</div>
+
+    @endif
 @endsection
 

@@ -61,13 +61,13 @@ class TestimonialController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(CreateRequest $request)
-    {
+    {  
         $request['published'] = $request['published'] ? 1 : 0;
         $imageName = basename($request->imageFile->store('public'));
         $request['image'] = $imageName;
         Testimonial::create($request->all());
         Session::flash("msg","Testimonial created successfully");
-        return redirect(route('testimonials.index'));
+        return redirect(route('x1'));
     }
 
     /**
@@ -116,7 +116,7 @@ class TestimonialController extends Controller
         }
         Testimonial::find($id)->update($request->all());
         session()->flash("msg", "The Testimonial was updated");
-        return redirect(route("testimonials.index"));
+        return redirect(route("x1"));
     }
        
     
@@ -136,6 +136,6 @@ class TestimonialController extends Controller
         }
         Testimonial::destroy($id);
         session()->flash("msg", "s: Testimonial Deleted Successfully");
-        return redirect(route("testimonials.index"));
+        return redirect(route("x1"));
     }
 }

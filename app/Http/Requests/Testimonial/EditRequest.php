@@ -26,7 +26,7 @@ class EditRequest extends FormRequest
         $id = $this->route('testimonials');
 
 		return [
-            'name' => 'required|unique:testimonials,title,'.$id.',id',
+            'name' => 'required',
             'description' => 'min:10',
 		];
     }
