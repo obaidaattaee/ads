@@ -45,14 +45,10 @@
 
             <div class="wrap-input100 validate-input bg1 col-12 rs1-wrap-input100"
                  data-validate="Enter Your Email (e@a.x)">
-                <span class="label-input100">Product Name *</span>
+                <span class="label-input100">Title  *</span>
                 <input class="input100" type="text" name="title" placeholder="Enter Product Name ">
             </div>
 
-            <div class="wrap-input100 bg1 col-12 rs1-wrap-input100">
-                <span class="label-input100">Model</span>
-                <input class="input100" type="text" name="model" placeholder="Enter Product Model">
-            </div>
             <div class="wrap-input100 bg1 col-12 rs1-wrap-input100">
                 <span class="label-input100">Image</span>
                 <div class='col-sm-6'>
@@ -64,72 +60,6 @@
                 </div>
             </div>
 
-            <div class="wrap-input100 bg1 col-12 rs1-wrap-input100">
-                <span class="label-input100">address</span>
-                <input class="input100" type="text" name="address" placeholder="Enter Number Phone">
-            </div>
-            <div class="wrap-input100 validate-input col-12 bg1 rs1-wrap-input100"
-                 data-validate="Enter Your Email (e@a.x)">
-                <span class="label-input100">Price  *</span>
-                <input class="input100" type="text" name="price" placeholder="Enter Your Email ">
-            </div>
-
-            <div class="wrap-input100 input100-select bg1">
-                <span class="label-input100">Select a subcategory *</span>
-                <div>
-                    <select class="js-select2" name="category_id">
-                        <option value="0">Please chooses</option>
-                        @if(\App\Models\Category::get() != null)
-                            @foreach(\App\Models\Category::get() as $category)
-                                <option value="{{$category->id ?? ""}}">{{ $category->title ?? ""}}</option>
-                            @endforeach
-                        @endif
-                    </select>
-                    <div class="dropDownSelect2"></div>
-                </div>
-            </div>
-
-            <div class="w-full dis-none js-show-service">
-                <div class="wrap-contact100-form-radio">
-                    <span class="label-input100">What type of products do you sell?</span>
-
-                    <div class="contact100-form-radio m-t-15">
-                        <input class="input-radio100" id="radio1" type="radio" name="ewerwerwer" value="physical"
-                               checked="checked">
-                        <label class="label-radio100" for="radio1">
-                            Phycical Products
-                        </label>
-                    </div>
-
-                    <div class="contact100-form-radio">
-                        <input class="input-radio100" id="radio2" type="radio" name="type-product" value="digital">
-                        <label class="label-radio100" for="radio2">
-                            Digital Products
-                        </label>
-                    </div>
-
-                    <div class="contact100-form-radio">
-                        <input class="input-radio100" id="radio3" type="radio" name="type-product" value="service">
-                        <label class="label-radio100" for="radio3">
-                            Services Consulting
-                        </label>
-                    </div>
-                </div>
-
-                <div class="wrap-contact100-form-range">
-                    <span class="label-input100">Budget *</span>
-
-                    <div class="contact100-form-range-value">
-                        $<span id="value-lower">610</span> - $<span id="value-upper">980</span>
-                        <input type="text" name="from-value">
-                        <input type="text" name="to-value">
-                    </div>
-
-                    <div class="contact100-form-range-bar">
-                        <div id="filter-bar"></div>
-                    </div>
-                </div>
-            </div>
 
             <div class="wrap-input100 validate-input bg0 rs1-alert-validate" data-validate="Please Type Your Message">
                 <span class="label-input100">Discrption</span>
@@ -143,15 +73,10 @@
 							<i class="fa fa-long-arrow-right m-l-7" aria-hidden="true"></i>
 						</span>
                 </button>
-            </div>
-            <div class="container-contact100-form-btn">
                 <a href="{{route('home-view')}}">
-                  <button  type="button"  class="btn btn-danger contact100-form-btn" ><span>
-							Exit
-							<i class="fa fa-long-arrow-left m-l-7" ></i>
-						</span></button>
-                </a>
-             </div>
+                   <button class="button" style="vertical-align:middle"><span>Hover </span></button>
+                 </a>
+            </div>
         </form>
     </div>
 </div>
