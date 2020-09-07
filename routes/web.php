@@ -29,7 +29,6 @@ Route::get('ads', function () {
 Route::get("/view",'FrontEnd\PostAdController@PostAd')->name("post-view")->middleware('auth');
 Route::post("/postproduct",'FrontEnd\ProductController@store')->name("post-product")->middleware('auth');
 
-
 Route::post("/contactus",'FrontEnd\HomeController@postContact')->name("contactus");
 Route::get("/contact",'FrontEnd\HomeController@contactme')->name("contact");
 
@@ -59,6 +58,8 @@ Route::prefix('admin')->namespace("Admin")->middleware('auth')->group(function (
 Route::get("settings",'SettingController@setting')->name('settings');
 Route::post("settings",'SettingController@store')->name('post-settings');
 
+Route::get('/order_status/approve/{id}','OrderController@approve')->name('order.approve');
+Route::get('/order_status/{id}','OrderController@cancel')->name('order.cancel');
 
 });
 

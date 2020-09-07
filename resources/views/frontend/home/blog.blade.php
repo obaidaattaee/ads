@@ -83,7 +83,44 @@
 
               
             </div>
+  <div class="comment-form">
+                        <h4>Leave a Reply</h4>
+                        @include('shared.msg')
+                        <form class="form-contact comment_form"  action="" method="post" id="commentForm">
 
+                            @csrf
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="form-group">
+                              <textarea class="form-control w-100 {{$errors->has('comment')?'is-invalid':''}}"  name="comment" id="comment" cols="30" rows="9"
+                                        placeholder="Write Comment" >{{ old('comment') }}</textarea>
+                                       
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <input value="{{ old('name') }}" class="form-control {{$errors->has('name')?'is-invalid':''}}" name="name" id="name" type="text" placeholder="Name">
+
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                        <input value="{{ old('email') }}" class="form-control {{$errors->has('email')?'is-invalid':''}}" name="email" id="email" type="email" placeholder="Email">
+
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="form-group">
+                                        <input value="{{ old('website') }}" class="form-control {{$errors->has('website')?'is-invalid':''}}" name="website" id="website" type="text" placeholder="Website">
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <button type="submit" class="button button-contactForm btn_1 boxed-btn">Send Message</button>
+                            </div>
+                        </form>
+                    </div>
 
             <div class="col-12 text-center mt-5">
               <p class="custom-pagination">
@@ -101,7 +138,7 @@
               <h3 class="h5 text-black mb-3">Search</h3>
               <form action="#" method="post">
                 <div class="form-group d-flex">
-                  <input type="text" class="form-control" placeholder="Search keyword and hit enter...">
+                  <input type="text" class="form-control" value="{{ request()->get('q') }}"  name="q" placeholder="Search keyword and hit enter...">
                 </div>
               </form>
             </div>
