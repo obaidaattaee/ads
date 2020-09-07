@@ -25,7 +25,7 @@ Route::get('ads', function () {
     return view('website.ads');
 });
 
-Route::post("/comments/{id}",'FrontEnd\CommentFrontController@storeComment')->name("add_comment");
+Route::post("/comments",'FrontEnd\CommentFrontController@storeComment')->name("add_comment");
 
 Route::get("/view",'FrontEnd\PostAdController@PostAd')->name("post-view")->middleware('auth');
 Route::post("/postproduct",'FrontEnd\ProductController@store')->name("post-product")->middleware('auth');

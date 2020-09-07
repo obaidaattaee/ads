@@ -7,14 +7,13 @@ use App\Models\Comment;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\CommentsRequest;
+use Illuminate\Support\Facades\Session;
 
 class CommentFrontController extends Controller
 {
-    public function storeComment(CommentsRequest $request, $id)
+    public function storeComment(CommentsRequest $request)
     {
-        $post = Post::find($id);
-        $data = $request->all();
-        Comment::create($data);
+        Comment::create($request->all());
         Session::flash('msg','s:Added Successfuly...');
         return redirect()->back();
     }

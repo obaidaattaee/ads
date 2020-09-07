@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Requests;
+namespace App\Http\Requests\About;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class AboutRequest extends FormRequest
+class EditRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -22,9 +22,12 @@ class AboutRequest extends FormRequest
      * @return array
      */
     public function rules()
-    {
+    {  
+         $id = $this->route('about');
+
         return [
-            'whyUs' => ['required'] 
+            'whyUs'     => 'required|min:30' ,
+            'moreInfo'    => 'required',
         ];
     }
 }

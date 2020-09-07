@@ -51,7 +51,7 @@
             </div>
                    <div class="comment-form">
                         <h4>Leave a Reply</h4>
-                        <form class="form-contact comment_form"  action="{{ route('add_comment' ,$posts->id) }}" method="post" id="commentForm">
+                        <form class="form-contact comment_form"  action="{{ route('add_comment') }}" method="post" id="commentForm">
                              @csrf 
 				                   	@include("shared.msg")
                             <div class="row">
