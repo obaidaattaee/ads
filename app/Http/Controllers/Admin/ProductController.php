@@ -63,7 +63,7 @@ class ProductController extends Controller
 
     public function store(CreateRequest $request)
     {
-//        dd($request->all());
+        dd($request->all());
         $request['published'] = $request['published'] ? 1 : 0;
         $imageName = basename($request->imageFile->store("public"));
         $request['image'] = $imageName;

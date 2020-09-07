@@ -29,66 +29,31 @@
           <div class="col-md-8">
 
             <div class="row mb-3 align-items-stretch">
-
-              <div class="col-md-6 col-lg-6 mb-4 mb-lg-4">
-                <div class="h-entry">
-                  <img src="{{asset('classyads/images/img_1.jpg')}}" alt="Image" class="img-fluid rounded">
-                  <h2 class="font-size-regular"><a href="#" class="text-black">Many People Selling Online</a></h2>
-                  <div class="meta mb-3">by Mark Spiker<span class="mx-1">&bullet;</span> Jan 18, 2019 <span class="mx-1">&bullet;</span> <a href="#">News</a></div>
-                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus eligendi nobis ea maiores sapiente veritatis reprehenderit suscipit quaerat rerum voluptatibus a eius.</p>
-                </div> 
-              </div>
-              <div class="col-md-6 col-lg-6 mb-4 mb-lg-4">
-                <div class="h-entry">
-                  <img src="{{asset('classyads/images/img_1.jpg')}}" alt="Image" class="img-fluid rounded">
-                  <h2 class="font-size-regular"><a href="#" class="text-black">Many People Selling Online</a></h2>
-                  <div class="meta mb-3">by Mark Spiker<span class="mx-1">&bullet;</span> Jan 18, 2019 <span class="mx-1">&bullet;</span> <a href="#">News</a></div>
-                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus eligendi nobis ea maiores sapiente veritatis reprehenderit suscipit quaerat rerum voluptatibus a eius.</p>
-                </div> 
-              </div>
-              <div class="col-md-6 col-lg-6 mb-4 mb-lg-4">
-                <div class="h-entry">
-                  <img src="{{asset('classyads/images/img_1.jpg')}}" alt="Image" class="img-fluid rounded">
-                  <h2 class="font-size-regular"><a href="#" class="text-black">Many People Selling Online</a></h2>
-                  <div class="meta mb-3">by Mark Spiker<span class="mx-1">&bullet;</span> Jan 18, 2019 <span class="mx-1">&bullet;</span> <a href="#">News</a></div>
-                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus eligendi nobis ea maiores sapiente veritatis reprehenderit suscipit quaerat rerum voluptatibus a eius.</p>
+                @php $posts = \App\Models\Post::get() @endphp
+                  @foreach ($posts as $posts )
+                   <div class="col-md-6 col-lg-6 mb-4 mb-lg-4">
+                  <div class="h-entry">
+                    <img src="{{asset('classyads/images/hero_1.jpg')}}" alt="Image" class="img-fluid rounded">
+                    <h2 class="font-size-regular"><a href="#" class="text-black">{{ $posts->title }}</a></h2>
+                    <div class="meta mb-3">by Mark Spiker<span class="mx-1">&bullet;</span> {{ date('M',strtotime($posts->created_at))}}, {{ date('Y',strtotime($posts->created_at))}}<span class="mx-1">&bullet;</span> <a href="#">News</a></div>
+                    <p>{{ $posts->description }}</p>
+                  </div> 
                 </div>
-              </div>
-
-
-              <div class="col-md-6 col-lg-6 mb-4 mb-lg-4">
+              @endforeach
+              {{-- <div class="col-md-6 col-lg-6 mb-4 mb-lg-4">
                 <div class="h-entry">
                   <img src="{{asset('classyads/images/img_1.jpg')}}" alt="Image" class="img-fluid rounded">
                   <h2 class="font-size-regular"><a href="#" class="text-black">Many People Selling Online</a></h2>
                   <div class="meta mb-3">by Mark Spiker<span class="mx-1">&bullet;</span> Jan 18, 2019 <span class="mx-1">&bullet;</span> <a href="#">News</a></div>
                   <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus eligendi nobis ea maiores sapiente veritatis reprehenderit suscipit quaerat rerum voluptatibus a eius.</p>
                 </div> 
-              </div>
-              <div class="col-md-6 col-lg-6 mb-4 mb-lg-4">
-                <div class="h-entry">
-                  <img src="{{asset('classyads/images/img_1.jpg')}}" alt="Image" class="img-fluid rounded">
-                  <h2 class="font-size-regular"><a href="#" class="text-black">Many People Selling Online</a></h2>
-                  <div class="meta mb-3">by Mark Spiker<span class="mx-1">&bullet;</span> Jan 18, 2019 <span class="mx-1">&bullet;</span> <a href="#">News</a></div>
-                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus eligendi nobis ea maiores sapiente veritatis reprehenderit suscipit quaerat rerum voluptatibus a eius.</p>
-                </div> 
-              </div>
-              <div class="col-md-6 col-lg-6 mb-4 mb-lg-4">
-                <div class="h-entry">
-                  <img src="{{asset('classyads/images/img_1.jpg')}}" alt="Image" class="img-fluid rounded">
-                  <h2 class="font-size-regular"><a href="#" class="text-black">Many People Selling Online</a></h2>
-                  <div class="meta mb-3">by Mark Spiker<span class="mx-1">&bullet;</span> Jan 18, 2019 <span class="mx-1">&bullet;</span> <a href="#">News</a></div>
-                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus eligendi nobis ea maiores sapiente veritatis reprehenderit suscipit quaerat rerum voluptatibus a eius.</p>
-                </div>
-              </div>
-
-              
+              </div> --}}
             </div>
-  <div class="comment-form">
+                   <div class="comment-form">
                         <h4>Leave a Reply</h4>
-                        @include('shared.msg')
-                        <form class="form-contact comment_form"  action="" method="post" id="commentForm">
-
-                            @csrf
+                        <form class="form-contact comment_form"  action="{{ route('add_comment' ,$posts->id) }}" method="post" id="commentForm">
+                             @csrf 
+				                   	@include("shared.msg")
                             <div class="row">
                                 <div class="col-12">
                                     <div class="form-group">
@@ -109,15 +74,9 @@
 
                                     </div>
                                 </div>
-                                <div class="col-12">
-                                    <div class="form-group">
-                                        <input value="{{ old('website') }}" class="form-control {{$errors->has('website')?'is-invalid':''}}" name="website" id="website" type="text" placeholder="Website">
-
-                                    </div>
-                                </div>
                             </div>
                             <div class="form-group">
-                                <button type="submit" class="button button-contactForm btn_1 boxed-btn">Send Message</button>
+                                <button type="submit" class="btn btn-success">Send Message</button>
                             </div>
                         </form>
                     </div>

@@ -25,6 +25,7 @@ Route::get('ads', function () {
     return view('website.ads');
 });
 
+Route::post("/comments/{id}",'FrontEnd\CommentFrontController@storeComment')->name("add_comment");
 
 Route::get("/view",'FrontEnd\PostAdController@PostAd')->name("post-view")->middleware('auth');
 Route::post("/postproduct",'FrontEnd\ProductController@store')->name("post-product")->middleware('auth');
@@ -53,6 +54,8 @@ Route::prefix('admin')->namespace("Admin")->middleware('auth')->group(function (
 
     Route::get("post/edit/{id}",'PostController@edit');
     Route::post("post/edit/{id}",'PostController@update');
+
+    Route::post("product",'ProductController@store')->name('post-product');
 
 
 Route::get("settings",'SettingController@setting')->name('settings');

@@ -18,6 +18,7 @@
             <tr>
                 <th>UserID</th>
                 <th>PostID</th>
+                <th>Email</th>
                 <th>Description</th>
                 <th>published</th>
                 <th>show|edit|delete</th>
