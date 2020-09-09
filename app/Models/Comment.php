@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Comment extends Model
 {
     protected $fillable = [
-        
+
           'name',
           'email',
           'comment',
@@ -16,8 +16,9 @@ class Comment extends Model
 
     //  protected $appends = ['post_name'];
 
-    // public function post()
-    // {
-    //     $this->belongsTo('App\Models\Post');
-    // }
+     public function post()
+     {
+         $this->belongsTo('App\Models\Post');
+     }
+
 }

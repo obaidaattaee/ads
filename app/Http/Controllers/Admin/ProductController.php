@@ -1,13 +1,13 @@
 <?php
 
 namespace App\Http\Controllers\Admin;
+use App\Http\Requests\Product\CreateProductRequest;
 
-use App\Models\Brand;
 
 use App\Models\Category;
 use App\Models\Product;
 use Illuminate\Http\Request;
-use  App\Http\Requests\Product\CreateRequest;
+
 use  App\Http\Requests\Product\EditRequest;
 
 use App\Http\Controllers\Controller;
@@ -61,9 +61,9 @@ class ProductController extends Controller
 
     }
 
-    public function store(CreateRequest $request)
+    public function store(Request $request)
     {
-        dd($request->all());
+//        dd($request->all());
         $request['published'] = $request['published'] ? 1 : 0;
         $imageName = basename($request->imageFile->store("public"));
         $request['image'] = $imageName;
@@ -100,7 +100,7 @@ class ProductController extends Controller
         return view("dashboard.products.edit")->withProduct($product)->withCategories($categories);
     }
 
-    public function update(EditRequest $request,  $id)
+    public function update(Request $request,  $id)
     {
 //        dd("hellp");
         if (!$request->active) {
